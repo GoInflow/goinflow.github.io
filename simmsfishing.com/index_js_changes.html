@@ -1694,7 +1694,15 @@ end-->
   <script>
     setup_rampt_imgs();
   </script>
- <script async src="https://goinflow.github.io/simmsfishing.com/scripts_simms.js"></script>
+	<script>
+		setTimeout(function()
+		{
+			var main_scripts = document.createElement("script");
+			main_scripts.src = "https://goinflow.github.io/simmsfishing.com/scripts_simms.js";
+
+			document.head.appendChild(main_scripts);
+		}, 4000);
+	</script>
 <script>
 
 setTimeout(function(){
