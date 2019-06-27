@@ -1021,7 +1021,183 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 rampt-img{display:block;width:100%}.i-rampthtml-layout-size-defined{overflow:hidden!important}.i-rampthtml-layout-container,.i-rampthtml-layout-fixed,.i-rampthtml-layout-fixed-height,.i-rampthtml-layout-responsive{display:inline-block;position:relative}i-rampthtml-sizer{display:block!important}.i-rampthtml-fill-content{position:absolute;display:block;height:0;max-height:100%;max-width:100%;min-height:100%;min-width:100%;width:0;margin:auto;top:0;left:0;bottom:0;right:0}.i-rampthtml-replaced-content,.i-rampthtml-screen-reader{padding:0!important;border:0!important}
 </style>
 <script>
-function rampt_support_webp(){var rampt_desktop_firefox_chrome_regex=/(Linux x86_64|Mac OS|Windows NT).*((Firefox\/(6[5-9]|[7-9][0-9]))|(Chrome\/[3-9][0-9]))/;var rampt_microsoft_browsers_regex=/Windows NT.*(Edge\/(1[8-9]|[2-9][0-9]))/;var rampt_android_chrome_regex=/Android.*Chrome\/[3-9][0-9].*Mobile Safari/;if((rampt_desktop_firefox_chrome_regex.test(navigator.userAgent)||rampt_android_chrome_regex.test(navigator.userAgent))&&navigator.userAgent.indexOf("Edge")==-1&&navigator.userAgent.indexOf("Trident")==-1){return true}else{return false}}if(window.IntersectionObserver){var rampt_observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.intersectionRatio>0){rampt_observer.unobserve(entry.target);load_rampt_img(entry.target)}})},{root:null,rootMargin:"0px",threshold:[0,.2,.4,.6,.8,1]})}function setup_rampt_imgs(){if(document.querySelectorAll("#rampt_img_style").length==0){var rampt_img_style=document.createElement("style");rampt_img_style.id="rampt_img_style";document.head.appendChild(rampt_img_style);rampt_img_style.innerHTML=""}var rampt_imgs=document.querySelectorAll("rampt-img");for(var rampt_img_index=0;rampt_img_index<rampt_imgs.length;rampt_img_index++){var rampt_img=rampt_imgs[rampt_img_index];if(rampt_img.getAttribute("rampt_resized")!="true"){rampt_img.setAttribute("rampt_resized","true");rampt_img.classList.add("i-rampthtml-layout-size-defined");rampt_img.classList.add("i-rampthtml-element");var rampt_layout=rampt_img.getAttribute("layout");if(rampt_layout=="responsive"){rampt_img.classList.add("i-rampthtml-layout-responsive")}else if(rampt_layout=="fixed"){rampt_img.classList.add("i-rampthtml-layout-fixed");rampt_img.style.width=rampt_img.getAttribute("width")+"px";rampt_img.style.height=rampt_img.getAttribute("height")+"px"}var rampt_img_src_width=parseInt(rampt_img.getAttribute("width"));var rampt_img_src_height=parseInt(rampt_img.getAttribute("height"));var rampt_size_ratio=rampt_img_src_height/rampt_img_src_width*100;var rampt_sizer=document.createElement("i-rampthtml-sizer");rampt_sizer.style.paddingTop=rampt_size_ratio+"%";rampt_img.appendChild(rampt_sizer);if(window.IntersectionObserver){rampt_observer.observe(rampt_img)}else{load_rampt_img(rampt_img)}}}}function load_rampt_img(rampt_container){if(rampt_container.querySelectorAll("img").length==0){rampt_container.classList.add("rampt-loading");var rampt_img=document.createElement("img");if(rampt_container.dataset.webpsrc&&rampt_support_webp()){rampt_img.src=rampt_container.dataset.webpsrc}else{rampt_img.src=rampt_container.getAttribute("src")}rampt_img.alt=rampt_container.getAttribute("alt");if(rampt_container.dataset.webpsrcset&&rampt_support_webp()){rampt_srcset=rampt_container.dataset.webpsrcset}else{rampt_srcset=rampt_container.getAttribute("srcset")}var rampt_img_width=rampt_container.clientWidth;if(rampt_srcset!=null){var rampt_sizes=rampt_srcset.split(",");var rampt_smaller_size=1e6;for(rampt_size_index in rampt_sizes){var rampt_size=rampt_sizes[rampt_size_index];var rampt_size_reg=/\s[0-9]+w/;if(rampt_size_reg.test(rampt_size)){var rampt_src_size=parseInt(rampt_size.match(rampt_size_reg)[0].replace("w",""));if(rampt_src_size>rampt_img_width&&rampt_src_size<rampt_smaller_size){rampt_smaller_size=rampt_src_size;rampt_img.src=rampt_size.replace(rampt_size_reg,"").replace(/^\s+/,"").replace(/\s+$/,"")}}}rampt_img.srcset=rampt_srcset}rampt_img.classList.add("i-rampthtml-fill-content");rampt_img.classList.add("i-rampthtml-replaced-content");rampt_container.appendChild(rampt_img)}}
+/* RAMPT */
+function rampt_support_webp()
+{
+	var rampt_desktop_firefox_chrome_regex = /(Linux x86_64|Mac OS|Windows NT).*((Firefox\/(6[5-9]|[7-9][0-9]))|(Chrome\/[3-9][0-9]))/;
+	var rampt_microsoft_browsers_regex = /Windows NT.*(Edge\/(1[8-9]|[2-9][0-9]))/;
+	var rampt_android_chrome_regex = /Android.*Chrome\/[3-9][0-9].*Mobile Safari/;
+
+	if((rampt_desktop_firefox_chrome_regex.test(navigator.userAgent) || rampt_android_chrome_regex.test(navigator.userAgent)) && navigator.userAgent.indexOf("Edge") == -1 && navigator.userAgent.indexOf("Trident") == -1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+if(window.IntersectionObserver)
+{
+	var rampt_observer = new IntersectionObserver(function(entries) {
+			entries.forEach(function (entry) {
+                    		if (entry.intersectionRatio > 0) {
+                        		rampt_observer.unobserve(entry.target);
+					load_rampt_img(entry.target);
+				}
+			});
+		},
+		{
+			root: null,
+                	rootMargin: "0px",
+                	threshold: [0, 0.2, 0.4, 0.6, 0.8, 1]
+		}
+	);
+}
+/* setup_rampt_imgs prepares all rampt-img tags
+   It resizes them so they are ready to load the images
+*/
+function setup_rampt_imgs()
+{
+	if(document.querySelectorAll("#rampt_img_style").length == 0)
+	{
+		var rampt_img_style = document.createElement("style");
+		rampt_img_style.id = "rampt_img_style";
+		document.head.appendChild(rampt_img_style);
+
+		rampt_img_style.innerHTML = '';
+	}
+
+	var rampt_imgs = document.querySelectorAll("rampt-img");
+
+	for(var rampt_img_index = 0; rampt_img_index < rampt_imgs.length; rampt_img_index++)
+	{
+		var rampt_img = rampt_imgs[rampt_img_index];
+		if(rampt_img.getAttribute("rampt_resized") != "true")
+		{
+			rampt_img.setAttribute("rampt_resized", "true");
+			rampt_img.classList.add("i-rampthtml-layout-size-defined");
+			rampt_img.classList.add("i-rampthtml-element");
+
+			var rampt_layout = rampt_img.getAttribute("layout");
+
+			if(rampt_layout == "responsive")
+			{
+				rampt_img.classList.add("i-rampthtml-layout-responsive");
+			}
+			else if(rampt_layout == "fixed")
+			{
+				rampt_img.classList.add("i-rampthtml-layout-fixed");
+				rampt_img.style.width = rampt_img.getAttribute("width") + "px";
+				rampt_img.style.height = rampt_img.getAttribute("height") + "px";
+			}
+
+			var rampt_img_src_width = parseInt(rampt_img.getAttribute("width"));
+			var rampt_img_src_height = parseInt(rampt_img.getAttribute("height"));
+
+			var rampt_size_ratio = (rampt_img_src_height / rampt_img_src_width) * 100;
+
+			var rampt_sizer = document.createElement("i-rampthtml-sizer");
+			rampt_sizer.style.paddingTop = rampt_size_ratio + "%"; 
+
+			rampt_img.appendChild(rampt_sizer);
+
+			if(window.IntersectionObserver)
+			{
+				rampt_observer.observe(rampt_img);
+			}
+			else
+			{
+				load_rampt_img(rampt_img);
+			}
+		}
+	}
+}
+
+/* load_rampt_img adds a loading animation and load the image in 
+   the rampt-img tag
+*/
+function load_rampt_img(rampt_container)
+{
+	if(rampt_container.querySelectorAll("img").length == 0)
+	{
+		rampt_container.classList.add("rampt-loading");
+		var rampt_img = document.createElement("img");
+
+		if(rampt_container.dataset.webpsrc && rampt_support_webp())
+		{
+			rampt_img.src = rampt_container.dataset.webpsrc;
+			rampt_img.setAttribute("data-fallbacksrc", rampt_container.getAttribute("src"));
+		}
+		else
+		{
+			rampt_img.src = rampt_container.getAttribute("src");
+		}
+
+		rampt_img.alt = rampt_container.getAttribute("alt");
+
+		if(rampt_container.dataset.webpsrcset && rampt_support_webp())
+		{
+			rampt_srcset = rampt_container.dataset.webpsrcset;
+			rampt_img.setAttribute("data-fallbacksrcset", rampt_container.getAttribute("srcset"));
+		}
+		else
+		{
+			rampt_srcset = rampt_container.getAttribute("srcset");
+		}
+
+		var rampt_img_width = rampt_container.clientWidth;
+
+		if(rampt_srcset != null)
+		{
+			var rampt_sizes = rampt_srcset.split(",");
+
+			var rampt_smaller_size = 1000000;
+
+			for(rampt_size_index in rampt_sizes)
+			{
+				var rampt_size = rampt_sizes[rampt_size_index];
+
+				var rampt_size_reg = /\s[0-9]+w/;
+
+				if(rampt_size_reg.test(rampt_size))
+				{
+					var rampt_src_size = parseInt(rampt_size.match(rampt_size_reg)[0].replace("w", ""));
+
+					if(rampt_src_size > rampt_img_width && rampt_src_size < rampt_smaller_size)
+					{
+						rampt_smaller_size = rampt_src_size;
+
+						rampt_img.src = rampt_size.replace(rampt_size_reg, "").replace(/^\s+/, "").replace(/\s+$/, "");
+					}
+				} 
+			}
+
+			rampt_img.srcset = rampt_srcset;
+		}
+
+		rampt_img.classList.add("i-rampthtml-fill-content");
+		rampt_img.classList.add("i-rampthtml-replaced-content");
+
+		rampt_img.setAttribute("onerror", "rampt_fallback(this);");
+
+		rampt_container.appendChild(rampt_img);
+
+	}
+}
+function rampt_fallback(this_rampt_img)
+{
+	if(this_rampt_img.dataset.fallbacksrc)
+	{
+		this_rampt_img.src = this_rampt_img.dataset.fallbacksrc;
+	}
+
+	if(this_rampt_img.dataset.fallbacksrcset)
+	{
+		this_rampt_img.setAttribute("srcset", this_rampt_img.dataset.fallbacksrcset);
+	}
+}
+
 </script>
 
 </head>
@@ -1418,23 +1594,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     <div id="banner_slider_1079" class="banners owl-carousel">
                     <div class="ty-banner__image-item">
-                                    <a class="banner__link" href="what-size-heat-pump-do-i-need-for-my-pool.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_95550526"  src="https://www.poolheatpumps.com/images/promo/2/find-what-size-pool-heater-do-i-need-.jpg" alt="How to size a pool heater and find the right size" title="How to size a pool heater and find the right size"  ></rampt-img>
+                                    <a class="banner__link" href="what-size-heat-pump-do-i-need-for-my-pool.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_1810354459"  src="https://www.poolheatpumps.com/images/promo/2/find-what-size-pool-heater-do-i-need-.jpg" alt="How to size a pool heater and find the right size" title="How to size a pool heater and find the right size"  ></rampt-img>
 
                     </a>                            </div>
                     <div class="ty-banner__image-item">
-                                    <a class="banner__link" href="sale.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_949742033"  src="https://www.poolheatpumps.com/images/promo/3/spring-pool-heater-sale.jpg" alt="Pool Heater Sale Banner" title="Pool Heater Sale Banner"  ></rampt-img>
+                                    <a class="banner__link" href="sale.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_1962405589"  src="https://www.poolheatpumps.com/images/promo/3/spring-pool-heater-sale.jpg" alt="Pool Heater Sale Banner" title="Pool Heater Sale Banner"  ></rampt-img>
 
                     </a>                            </div>
                     <div class="ty-banner__image-item">
-                                    <a class="banner__link" href="pool-heat-pumps.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_1608366919"  src="https://www.poolheatpumps.com/images/promo/2/extend-your-swim-season.jpg" alt="Extend Your Swim Season With a Heat Pump" title="Extend Your Swim Season With a Heat Pump"  ></rampt-img>
+                                    <a class="banner__link" href="pool-heat-pumps.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_1788404379"  src="https://www.poolheatpumps.com/images/promo/2/extend-your-swim-season.jpg" alt="Extend Your Swim Season With a Heat Pump" title="Extend Your Swim Season With a Heat Pump"  ></rampt-img>
 
                     </a>                            </div>
                     <div class="ty-banner__image-item">
-                                    <a class="banner__link" href="pool-supplies/salt-water-chlorinators.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_1323520959"  src="https://www.poolheatpumps.com/images/promo/2/chlorine-generator-banner.jpg" alt="Chlorine Generators" title="Chlorine Generators"  ></rampt-img>
+                                    <a class="banner__link" href="pool-supplies/salt-water-chlorinators.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_327172082"  src="https://www.poolheatpumps.com/images/promo/2/chlorine-generator-banner.jpg" alt="Chlorine Generators" title="Chlorine Generators"  ></rampt-img>
 
                     </a>                            </div>
                     <div class="ty-banner__image-item">
-                                    <a class="banner__link" href="calculate-pool-heating-costs.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_625896799"  src="https://www.poolheatpumps.com/images/promo/2/calculate-pool-heating-costs.jpg" alt="Calculate Pool Heating Costs" title="Calculate Pool Heating Costs"  ></rampt-img>
+                                    <a class="banner__link" href="calculate-pool-heating-costs.html" >                        <rampt-img layout="responsive" width="740" height="395" class="ty-pict  ty-banner__image   cm-image" id="det_img_1426703648"  src="https://www.poolheatpumps.com/images/promo/2/calculate-pool-heating-costs.jpg" alt="Calculate Pool Heating Costs" title="Calculate Pool Heating Costs"  ></rampt-img>
 
                     </a>                            </div>
             </div>
@@ -1448,13 +1624,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="span6 " >
                 <div class=" ty-banners-pickup">
                 <div class="ty-banner__image-wrapper">
-        <a href="/what-size-heat-pump-do-i-need-for-my-pool.html" >        <rampt-img layout="responsive" width="434" height="185" class="ty-pict     cm-image" id="det_img_673445394"  src="https://www.poolheatpumps.com/images/promo/3/banner_need_help_sizing_a_pool_heater.jpg" alt="Need Help Sizing A Pool Heater Heat Pump" title="Need Help Sizing A Pool Heater Heat Pump"  ></rampt-img>
+        <a href="/what-size-heat-pump-do-i-need-for-my-pool.html" >        <rampt-img layout="responsive" width="434" height="185" class="ty-pict     cm-image" id="det_img_2143895526"  src="https://www.poolheatpumps.com/images/promo/3/banner_need_help_sizing_a_pool_heater.jpg" alt="Need Help Sizing A Pool Heater Heat Pump" title="Need Help Sizing A Pool Heater Heat Pump"  ></rampt-img>
 
         </a>    </div>
     
     </div><div class=" ty-banners-free-ship">
                 <div class="ty-banner__image-wrapper">
-        <a href="/shipping-return-policy.html" >        <rampt-img layout="responsive" width="434" height="185" class="ty-pict     cm-image" id="det_img_1533543254"  src="https://www.poolheatpumps.com/images/promo/3/banner_free_ship_gray.jpg" alt="Free Shipping on Pool Heaters" title="Free Shipping on Pool Heaters"  ></rampt-img>
+        <a href="/shipping-return-policy.html" >        <rampt-img layout="responsive" width="434" height="185" class="ty-pict     cm-image" id="det_img_1259171854"  src="https://www.poolheatpumps.com/images/promo/3/banner_free_ship_gray.jpg" alt="Free Shipping on Pool Heaters" title="Free Shipping on Pool Heaters"  ></rampt-img>
 
         </a>    </div>
     
@@ -4051,7 +4227,21 @@ Pool Size: 26x12, 13,000 Gallons</div>
 
 
 <script>
-	
+var rampt_imgs = document.querySelectorAll("rampt-img[src]");
+
+for(var rampt_img_index = 0; rampt_img_index < rampt_imgs.length; rampt_img_index++)
+{
+	var rampt_img = rampt_imgs[rampt_img_index];
+
+	if(rampt_img.getAttribute("src").indexOf("https://www.poolheatpumps.com/images/") == 0)
+	{
+		rampt_img.dataset.webpsrc = rampt_img.getAttribute("src").replace("https://www.poolheatpumps.com/images/", "https://testing1804.goinflow.com/poolheat_images/").replace(/\.(jpg|gif|png)$/, ".webp");
+	}
+	else if(rampt_img.getAttribute("src").indexOf("/images/") == 0)
+	{
+		rampt_img.dataset.webpsrc = rampt_img.getAttribute("src").replace(/^\/images\//, "https://testing1804.goinflow.com/poolheat_images/").replace(/\.(jpg|gif|png)$/, ".webp");
+	}
+}
 
   setup_rampt_imgs();
 </script>
