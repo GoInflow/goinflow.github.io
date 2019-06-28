@@ -3181,6 +3181,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <script>
+var youtube_iframes = document.querySelectorAll("iframe[src*='youtube.com']");
+
+for(var youtube_iframe_index = 0; youtube_iframe_index < youtube_iframes.length; youtube_iframe_index++)
+{
+	var youtube_iframe = youtube_iframes[youtube_iframe_index];
+
+	youtube_iframe.setAttribute("data-src", youtube_iframe.src);
+	youtube_iframe.src = "";
+}
+
+
 var rampt_imgs = document.querySelectorAll("rampt-img[src]");
 
 for(var rampt_img_index = 0; rampt_img_index < rampt_imgs.length; rampt_img_index++)
