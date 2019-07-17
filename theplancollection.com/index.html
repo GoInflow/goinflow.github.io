@@ -45,7 +45,14 @@
 
 	</style>
 
-    <link href="/Content/app.css?v=1.2" rel="stylesheet" />
+    <!--<link href="/Content/app.css?v=1.2" rel="stylesheet" />-->
+	<script defer type="text/javascript">
+		var app_css = document.createElement("link");
+		app_css.rel = "stylesheet";
+		app_css.href = "/Content/app.css?v=1.2";
+		document.head.appendChild(app_css);
+	</script>
+
 
     <script src="/Scripts/Packages/jquery.min.js"></script>
     
