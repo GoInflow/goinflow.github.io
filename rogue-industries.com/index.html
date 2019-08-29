@@ -99,7 +99,7 @@ Shopify.currency = {"active":"USD","rate":"1.0"};
 Shopify.theme = {"name":"Rogue Theme April 2019-HC-02 May'19","id":72763899979,"theme_store_id":null,"role":"main"};
 Shopify.theme.handle = "null";
 Shopify.theme.style = {"id":null,"handle":null};</script>
-<script>(function() {
+<script>
 function asyncLoad() {
 var urls = ["https:\/\/assets1.adroll.com\/shopify\/latest\/j\/shopify_rolling_bootstrap.js?adroll_adv_id=UEG6EHYSEZC7HCJ7ZHLBYS\u0026adroll_pix_id=V45RP267VVCPRN6JSF7GEK\u0026shop=rogueindustries.myshopify.com","https:\/\/cdn-stamped-io.azureedge.net\/files\/widget.min.js?shop=rogueindustries.myshopify.com","https:\/\/chimpstatic.com\/mcjs-connected\/js\/users\/a087983ca8efc2925fd029391\/f3475e57923dee65d39df5809.js?shop=rogueindustries.myshopify.com","https:\/\/redirects.eastsideco.io\/js\/redirect-app.js?shop=rogueindustries.myshopify.com","https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=JBYcrm\u0026shop=rogueindustries.myshopify.com"];
 for (var i = 0; i < urls.length; i++) {
@@ -111,12 +111,7 @@ var x = document.getElementsByTagName('script')[0];
 x.parentNode.insertBefore(s, x);
 }
 };
-if(window.attachEvent) {
-window.attachEvent('onload', asyncLoad);
-} else {
-window.addEventListener('load', asyncLoad, false);
-}
-})();</script>
+</script>
 <script id="__st">var __st={"a":1859764,"offset":-14400,"reqid":"4ec49fe4-34c9-4679-b989-e92a9eee61ce","pageurl":"www.rogue-industries.com\/","u":"4b26ba231730","p":"home"};</script>
 <script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
 <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
@@ -492,6 +487,8 @@ function rampt_delayed_scripts()
 
 		rampt_delayed_resource.src = rampt_delayed_resource.getAttribute("rampt-delay-src");
 	}
+
+	asyncLoad();
 }
 </script>
 </head>
