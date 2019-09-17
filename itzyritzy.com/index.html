@@ -2429,7 +2429,7 @@ Shopify.theme.handle = "null";
 Shopify.theme.style = {"id":null,"handle":null};</script>
 <script>window.ShopifyPay = window.ShopifyPay || {};
 window.ShopifyPay.apiHost = "pay.shopify.com";</script>
-<script>(function() {
+<script>
   function asyncLoad() {
     var urls = ["\/\/productreviews.shopifycdn.com\/assets\/v4\/spr.js?shop=itzyritzy.myshopify.com","https:\/\/assets1.adroll.com\/shopify\/latest\/j\/shopify_rolling_bootstrap.js?adroll_adv_id=SNUXVQ4FRNFDNNNCZIRNRT\u0026adroll_pix_id=REBN7CAUKFGF7D7PB52SOX\u0026shop=itzyritzy.myshopify.com","https:\/\/js.smile.io\/v1\/smile-shopify.js?shop=itzyritzy.myshopify.com","\/\/secure.apps.shappify.com\/apps\/csp\/customer_pricing.php?shop=itzyritzy.myshopify.com","https:\/\/cp.boldapps.net\/csp_install_check.js?shop=itzyritzy.myshopify.com","https:\/\/d1buj3lvc9ukyl.cloudfront.net\/intlTelInput.js?shop=itzyritzy.myshopify.com","https:\/\/d1buj3lvc9ukyl.cloudfront.net\/itzyritzy.myshopify.com.js?shop=itzyritzy.myshopify.com","https:\/\/upsells.boldapps.net\/v2_ui\/js\/UpsellTracker.js?shop=itzyritzy.myshopify.com","https:\/\/upsells.boldapps.net\/v2_ui\/js\/upsell.js?shop=itzyritzy.myshopify.com","https:\/\/static.klaviyo.com\/onsite\/js\/klaviyo.js?company_id=MKGvpi\u0026shop=itzyritzy.myshopify.com","https:\/\/analytics.getshogun.com\/collector.js?shop=itzyritzy.myshopify.com","\/\/www.powr.io\/powr.js?powr-token=itzyritzy.myshopify.com\u0026external-type=shopify\u0026shop=itzyritzy.myshopify.com","https:\/\/s3-eu-west-1.amazonaws.com\/shopify-autofill\/autofill-discount.min.js?shop=itzyritzy.myshopify.com","https:\/\/s3.amazonaws.com\/lastsecondcoupon\/js\/quickannouncementbar.js?shop=itzyritzy.myshopify.com","https:\/\/track.klickly.com\/track.bundle.js?shop=itzyritzy.myshopify.com","https:\/\/scripttags.justuno.com\/shopify_justuno_14057294_c7346100-b7f5-11e9-b5e5-1fbb394d986d.js?shop=itzyritzy.myshopify.com","https:\/\/cdn.problogger.lowfruitsolutions.com\/695f096c764970a06187f54a56a89bcc\/pinterest-pinit-dc4ba1f5e66bbf86b2f989738db50701.js?shop=itzyritzy.myshopify.com","https:\/\/cdn.problogger.lowfruitsolutions.com\/695f096c764970a06187f54a56a89bcc\/image-captions-7ef0fcf2544ea58ebf0eb3d43263a493.js?shop=itzyritzy.myshopify.com","https:\/\/cdn.problogger.lowfruitsolutions.com\/695f096c764970a06187f54a56a89bcc\/related-slider-e14b505bb7b7180944af10f8478f1345.js?shop=itzyritzy.myshopify.com","https:\/\/s3.amazonaws.com\/lastsecondcoupon\/js\/freeshippingbar.js?shop=itzyritzy.myshopify.com"];
     for (var i = 0; i < urls.length; i++) {
@@ -2446,7 +2446,8 @@ window.ShopifyPay.apiHost = "pay.shopify.com";</script>
   } else {
     window.addEventListener('load', asyncLoad, false);
   }
-})();</script>
+}
+</script>
 <script id="__st">var __st={"a":14057294,"offset":-18000,"reqid":"0a367e5d-e9bf-4360-8399-2086fccf7c49","pageurl":"www.itzyritzy.com\/","u":"8b17e95402a5","p":"home"};</script>
 <script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
 <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
@@ -2805,6 +2806,8 @@ function rampt_delayed_scripts()
 			rampt_delayed_resource.href = rampt_delayed_resource.getAttribute("data-rampt-delay-href");
 		}
 	}
+
+	asyncLoad();
 }
 </script>
 </head>
