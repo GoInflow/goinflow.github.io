@@ -2372,10 +2372,19 @@ body:not(.template-index) .main-content, body:not(.template-article) .main-conte
 }
 
 </style>
+<style>
+/* RAMPT styles */
+#PageContainer {
+	opacity:1;
+}
+#MainContent .easylockdown-content {
+	display:block !important;
+}
+</style>
 <!--<link href="//cdn.shopify.com/s/files/1/1405/7294/t/36/assets/bootstrap.min.css?54743" rel="stylesheet" type="text/css" media="all" />-->
 <!--  <link href="//cdn.shopify.com/s/files/1/1405/7294/t/36/assets/inferno.scss.css?54743" rel="stylesheet" type="text/css" media="all" />-->
   <link data-rampt-href="//cdn.shopify.com/s/files/1/1405/7294/t/36/assets/MyFontsWebfontsKit.css?54743" rel="stylesheet" type="text/css" media="all" />
-  
+ 
 
   <link data-rampt-href="//fonts.googleapis.com/css?family=Raleway:200,200i,400,400i,700,700i" rel="stylesheet" type="text/css" media="all" />
 
@@ -5723,8 +5732,8 @@ function rampt_delayed_scripts()
 </div>
 
   <script type="text/javascript" id='easylockdown-helper'>
-    if( typeof easylockdown == 'object' ) easylockdown.clientContentToggle(true);
-    else { for(var blocks=document.querySelectorAll("div.easylockdown-content, #easylockdown-password-form, #easylockdown-hpbtn-style, .easylockdown-auto-hl-styles, .easylockdown-custom-hl-styles"),i=0;i<blocks.length;i++)blocks[i].remove();try{document.getElementById("easylockdown404").removeAttribute("style")}catch(a){}try{document.querySelector(".easylockdown-title-404").innerHTML="Page not found"}catch(a){}try{document.querySelector(".easylockdown-message-404").innerHTML="<p>Sorry, we couldn't find this page.</p>"}catch(a){}; }
+    /*if( typeof easylockdown == 'object' ) easylockdown.clientContentToggle(true);
+    else { for(var blocks=document.querySelectorAll("div.easylockdown-content, #easylockdown-password-form, #easylockdown-hpbtn-style, .easylockdown-auto-hl-styles, .easylockdown-custom-hl-styles"),i=0;i<blocks.length;i++)blocks[i].remove();try{document.getElementById("easylockdown404").removeAttribute("style")}catch(a){}try{document.querySelector(".easylockdown-title-404").innerHTML="Page not found"}catch(a){}try{document.querySelector(".easylockdown-message-404").innerHTML="<p>Sorry, we couldn't find this page.</p>"}catch(a){}; }*/
   </script>
 
     </main>
@@ -6822,6 +6831,5 @@ jsondata = "eyJibnRfdGV4dCI6IlFVSUNLIFZJRVciLCJibnRfdGV4dF9mb250IjoidGFob21hIiwi
 <script>
 setup_rampt_imgs();
 </script>
-
  </body>
 </html>
