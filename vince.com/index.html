@@ -281,14 +281,14 @@ dataLayer = [{"demandwareID":"abpWBC8NX0pyn8RH12sjgVcaov","loggedInState":false,
 </script>
 
 <script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T6CZ2V3');
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.setAttribute("data-rampt-delay-src", '//www.googletagmanager.com/gtm.js?id='+i+dl);f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T6CZ2V3');
 </script>
 
 
 <script>
 	(function(d) {
 		var e = d.createElement('script');
-		e.src = d.location.protocol + '//tag.bounceexchange.com/2842/i.js';
+		e.setAttribute("data-rampt-delay-src", d.location.protocol + '//tag.bounceexchange.com/2842/i.js');
 		e.async = true;
 		d.getElementsByTagName("head")[0].appendChild(e);
 	}(document));
@@ -7670,7 +7670,7 @@ var offset = $('.primary-logo').offset();
 </script>
 <script type="text/javascript">
 	var biJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
-	document.write(unescape("%3Cscript async src='" + biJsHost + "s1.listrakbi.com/scripts/script.js?m=j260Ra5NwGUx&v=1' type='text/javascript'%3E%3C/script%3E"));
+	document.write(unescape("%3Cscript async data-rampt-delay-src='" + biJsHost + "s1.listrakbi.com/scripts/script.js?m=j260Ra5NwGUx&v=1' type='text/javascript'%3E%3C/script%3E"));
 	</script>
 <script type="text/javascript">
 
@@ -7853,6 +7853,9 @@ function enable_stylesheets()
 </script>
 <script>
 setup_rampt_elements();
+
+setInterval(setup_rampt_elements, 2000);
+
 </script>
 </body>
 </html>
