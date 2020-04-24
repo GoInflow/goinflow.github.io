@@ -12103,8 +12103,8 @@ function __doPostBack(eventTarget, eventArgument) {
 <script async src="https://goinflow.github.io/magazineline.com/WebResource.js" type="text/javascript"></script
 
 
-<script src="/ScriptResource.axd?d=eKg0G-IUABVffuBWASPJgxT7e_7dr2hK9TDWYzMmma91-CBy23frWeq-7eAeD-CV7vFx2SF00bBBN1Bo5aR8smc7PSRo5tikfwagFaQv2w8jnuvkn7XNlO6V77EqHtM3YxAOuUHVt4WebURH5Zyu69Cup15nL55H8ywW6C1t8pM1&amp;t=5f9d5645" type="text/javascript"></script>
-<script src="/ScriptResource.axd?d=k5dnScfKjrbLmPFalXP4IS74kZ0P6MWFM5GRJlbEk6kg3uixLhIoX4AAO7uBywa4a7wGsZ2t0lVMM1JReYYEMQbVG2Ep5xR_-aWHQrgIi-6blKnsKpyqocEYVG1tIj_fBBqXdKgbfbgIO560sw3WRYDMW0YtXU46JX3Fgu2P-sTHZrth4HLqet62Yp1d4F-h0&amp;t=5f9d5645" type="text/javascript"></script>
+<script async data-delay-src="/ScriptResource.axd?d=eKg0G-IUABVffuBWASPJgxT7e_7dr2hK9TDWYzMmma91-CBy23frWeq-7eAeD-CV7vFx2SF00bBBN1Bo5aR8smc7PSRo5tikfwagFaQv2w8jnuvkn7XNlO6V77EqHtM3YxAOuUHVt4WebURH5Zyu69Cup15nL55H8ywW6C1t8pM1&amp;t=5f9d5645" type="text/javascript"></script>
+<script async data-delay-src="/ScriptResource.axd?d=k5dnScfKjrbLmPFalXP4IS74kZ0P6MWFM5GRJlbEk6kg3uixLhIoX4AAO7uBywa4a7wGsZ2t0lVMM1JReYYEMQbVG2Ep5xR_-aWHQrgIi-6blKnsKpyqocEYVG1tIj_fBBqXdKgbfbgIO560sw3WRYDMW0YtXU46JX3Fgu2P-sTHZrth4HLqet62Yp1d4F-h0&amp;t=5f9d5645" type="text/javascript"></script>
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="49DE2A87" />
@@ -14016,9 +14016,9 @@ American Collegiate Marketing, Inc.<br />
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-<script async src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+<script async data-delay-src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
 <!--<script src="/bundles/Shared/js?v=W1WdI0eKBFS_fJP2sksWtlLfKX0kNHQhweVbZQ824Xs1" type="text/javascript"></script>-->
-<script async src="https://goinflow.github.io/magazineline.com/Shared.js" type="text/javascript"></script>
+<script async data-delay-src="https://goinflow.github.io/magazineline.com/Shared.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 // CDN Failsafe
@@ -14385,6 +14385,35 @@ setTimeout(delay_load, 4000);
 function delay_load()
 {
 	load_disabled_stylesheets();
+
+	// checks if device is iPhone, iPod or android to delay the execution of rampt_delayed_scripts 4 seconds
+	if(/(Android|iPhone|iPod)/.test(navigator.userAgent))
+	{
+		setTimeout(load_delayed_scripts, 4000);
+	}
+	else
+	{
+		load_delayed_scripts();
+	}
+}
+function load_delayed_scripts()
+{
+	// search all <link> and <script> tags that have the data-rampt-delay-href or data-rampt-delay-src attribute and set the href or src attributes
+	var delayed_resources = document.querySelectorAll("script[data-delay-src], link[data-delay-href]");
+
+	for(var delayed_resource_index = 0; delayed_resource_index < delayed_resources.length; delayed_resource_index++)
+	{
+		var delayed_resource = delayed_resources[delayed_resource_index];
+
+		if(delayed_resource.tagName.toLowerCase() == "script")
+		{
+			delayed_resource.src = delayed_resource.getAttribute("data-delay-src");
+		}
+		else
+		{
+			delayed_resource.href = delayed_resource.getAttribute("data-delay-href");
+		}
+	}
 }
 function load_disabled_stylesheets()
 {
