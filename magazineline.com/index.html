@@ -11845,8 +11845,8 @@ span.hawk-customBannerTitle {
 </style>
 
 <!--<link rel="stylesheet" href="/cms/MagazineLine/includes/css/import.css" disabled />-->
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,700,200" disabled />
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kameron:400,700" disabled />
+<link rel="stylesheet" delay-href="//fonts.googleapis.com/css?family=Raleway:400,700,200" />
+<link rel="stylesheet" delay-href="//fonts.googleapis.com/css?family=Kameron:400,700" />
 
 
 
@@ -14201,11 +14201,11 @@ function delay_load()
 }
 function load_disabled_stylesheets()
 {
-	var disabled_stylesheets = document.querySelectorAll("link[rel='stylesheet'][disabled]");
+	var disabled_stylesheets = document.querySelectorAll("link[rel='stylesheet'][delay-href]");
 
 	for(var stylesheet_index = 0; stylesheet_index < disabled_stylesheets.length; stylesheet_index++)
 	{
-		disabled_stylesheets[stylesheet_index].removeAttribute("disabled");
+		disabled_stylesheets[stylesheet_index].href = disabled_stylesheets[stylesheet_index].getAttribute("delay-href");
 	}
 }
 </script>
