@@ -116,7 +116,8 @@ for (var attr in meta) {
   
 };
 </script>
-<script class="analytics">(function () {
+<script class="analytics">function asyncLoadAnalytics() {
+console.log("async load analytics");
   var customDocumentWrite = function(content) {
     var jquery = null;
 
@@ -359,7 +360,7 @@ for (var attr in meta) {
       eventsListenerScript.src = "//cdn.shopify.com/s/assets/shop_events_listener-2c6237918c4bbec8783d8ceecd5759edc38afa9b5bef55134462710955517539.js";
       document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
     
-})();</script>
+}</script>
 <script integrity="sha256-WJ/zNC1jntI8lPX8EeA9ZOB4jipKaHOR6+7u8g6vL1A=" crossorigin="anonymous" data-source-attribution="shopify.loadfeatures" defer="defer" src="//cdn.shopify.com/s/assets/storefront/load_feature-589ff3342d639ed23c94f5fc11e03d64e0788e2a4a687391ebeeeef20eaf2f50.js"></script>
 <script crossorigin="anonymous" defer="defer" src="//cdn.shopify.com/s/assets/shopify_pay/storefront-f95c62afca18778ed8677facd32818c864b5e4938cba1769e8d8ba0b541d41dc.js?v=20190107"></script>
 <script integrity="sha256-EYppj7RbseKnaugbP4EJXR4sMs7TPdTpPmQ3i163eNA=" data-source-attribution="shopify.dynamic-checkout" defer="defer" src="//cdn.shopify.com/s/assets/storefront/features-118a698fb45bb1e2a76ae81b3f81095d1e2c32ced33dd4e93e64378b5eb778d0.js" crossorigin="anonymous"></script>
@@ -5880,9 +5881,6 @@ function rampt_delay_load()
 }
 function rampt_delayed_scripts()
 {
-	asyncLoad();
-	asyncLoadZendesk();
-
 	// search all <link> and <script> tags that have the data-rampt-delay-href or data-rampt-delay-src attribute and set the href or src attributes
 	var rampt_delayed_resources = document.querySelectorAll("script[data-rampt-delay-src], link[data-rampt-delay-href]");
 
@@ -5899,6 +5897,10 @@ function rampt_delayed_scripts()
 			rampt_delayed_resource.href = rampt_delayed_resource.getAttribute("data-rampt-delay-href");
 		}
 	}
+
+	asyncLoad();
+	asyncLoadZendesk();
+	asyncLoadAnalytics();
 }
 </script>
 </body>
