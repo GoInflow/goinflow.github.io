@@ -4612,6 +4612,7 @@ Phoenix, AZ. 85281</address>
 	rampt_wait_for_bootstrap();
   </script>
 <!-- start footer scripts -->
+	<noscript id="footer_scripts">
   <script type="text/javascript" src="https://cdn11.bigcommerce.com/shared/js/csrf-protection-header-228efb3f344929ad1dc0ab5e8cf6fb5fb09c6bb1.js"></script>
 <script type='text/javascript'>
 window.__lo_site_id = 145134;
@@ -4674,6 +4675,26 @@ var removeJsonLd = true; // remove all other json-ld markup from the site
 }
 }
 </script>
+
+	</noscript>
+	<script>
+		function htmlDecode(input){
+  			var e = document.createElement('div');
+  			e.innerHTML = input;
+  			return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+		}
+
+		var footer_scripts_code = document.getElementById('footer_scripts').innerHTML.replace(/\ssrc=\"https:\/\/ep.chatpath.com\/widget.js/g, ' data-rampt-delay-src="https://ep.chatpath.com/widget.js');
+
+		if(document.getElementById("footer_scripts").innerHTML.indexOf("&lt;script") > -1)
+		{
+			document.write(htmlDecode(footer_scripts_code));
+		}
+		else
+		{
+			document.write(footer_scripts_code);
+		}
+	</script>
 
 
 
