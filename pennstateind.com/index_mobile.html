@@ -1038,15 +1038,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <input type="text" name="q" value="" id="searchfield" class="searchspring-query" autocomplete="off" placeholder="Search by Keyword or Item #">
 <button type="submit" title="Search" class="button touchable" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">Search</button>
 </form>
-<link rel="stylesheet" type="text/css" href="//cdn.searchspring.net/autocomplete/autocomplete-v2.css">
-<script type="text/javascript" src="//cdn.searchspring.net/autocomplete/searchspring-autocomplete.min.js"></script>
+<link rel="stylesheet" type="text/css" data-rampt-delay-href="//cdn.searchspring.net/autocomplete/autocomplete-v2.css">
+<script type="text/javascript" data-rampt-delay-src="//cdn.searchspring.net/autocomplete/searchspring-autocomplete.min.js"></script>
 <script type="text/javascript">
-SearchSpring.Autocomplete.init({
-siteId: 'hg83j4',
-queryClass: 'searchspring-query',
-offsetY: 0,
-offsetX: 0
-});
+function load_searchspring()
+{
+	if(typeof(SearchSpring) == "function")
+	{
+		SearchSpring.Autocomplete.init({
+			siteId: 'hg83j4',
+			queryClass: 'searchspring-query',
+			offsetY: 0,
+			offsetX: 0
+		});
+	}
+	else
+	{
+		setTimeout(load_searchspring, 200);
+	}
+}
+load_searchspring();
 </script>
 <style type="text/css">
 body #searchspring-autocomplete_results {
