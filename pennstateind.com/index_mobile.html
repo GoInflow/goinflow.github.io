@@ -10,7 +10,7 @@
 
 <script id="ltkSDK" data-rampt-delay-src="https://cdn.listrakbi.com/scripts/script.js?m=ManuyBqkkqWK&amp;v=1"></script>
 
-<script data-rampt-delay-src="https://connect.facebook.net/signals/config/2787481228243474?v=2.9.27&amp;r=stable" async=""></script><script async="" data-rampt-delay-src="https://connect.facebook.net/en_US/fbevents.js"></script><script data-rampt-delay-src="//bat.bing.com/bat.js" async=""></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">
+<script type="text/javascript">
 var MivaVM_API = "Redirect";
 var MivaVM_Version = "5.34";
 var json_url = "https:\/\/www.pennstateind.com\/mm5\/json.mvc\u003F";
@@ -983,6 +983,8 @@ window.uetq.push('event', '', {'ecomm_prodid': '', 'ecomm_pagetype': 'home'});
 <meta name="p:domain_verify" content="a214af701999ec96a8c035049706bb27">
 <!-- Facebook Pixel Code -->
 <script>
+function load_facebook_tracking()
+{
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -993,6 +995,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '2787481228243474');
 fbq('track', 'PageView');
+}
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2787481228243474&ev=PageView&noscript=1"
@@ -2177,6 +2180,8 @@ function rampt_delayed_scripts()
 	}
 
 	load_yt_tracker();
+
+	load_facebook_tracking();
 }
 
 /* RAMPT */
