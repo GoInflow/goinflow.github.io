@@ -196,7 +196,8 @@ ga('set', 'dimension3', AffiliateID);
 </div>
 
 
-<script src="/ScriptResource.axd?d=0WGZHxBbVXLT8Y0BuPhDL0TnZ2kQs_lnn3BwRWQ54BRqUHsnbULEbqHC4JI3443p7Mty67LzOwojTEFpVNfmH-GKZ_hVgUZ1uESmAWZkSoXaLDdxEtIp3chhUs1NgBq2u8ziLFfqibW943MGe3gNpzNkCpAtgAQY2teQXyjAlMA1&amp;t=5f9d5645" type="text/javascript"></script>
+<script data-rampt-delay-src="/ScriptResource.axd?d=0WGZHxBbVXLT8Y0BuPhDL0TnZ2kQs_lnn3BwRWQ54BRqUHsnbULEbqHC4JI3443p7Mty67LzOwojTEFpVNfmH-GKZ_hVgUZ1uESmAWZkSoXaLDdxEtIp3chhUs1NgBq2u8ziLFfqibW943MGe3gNpzNkCpAtgAQY2teQXyjAlMA1&amp;t=5f9d5645" type="text/javascript"></script>
+
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="49DE2A87" />
@@ -2229,7 +2230,14 @@ if (window.addEventListener) {
 </script>
 
         
-        <!-- Begin 8x8 Chat Script --><script type="text/javascript">     window.__8x8Chat = {          uuid: "script_7066538195e7d18527334e4.94612526",          tenant: "YW1lcmljYW5jb2xsZWdpYXQwMQ",          channel: "ACM Chat",          domain: "https://vcc-na38.8x8.com",          path: "/.",          buttonContainerId: "__8x8-chat-button-container-script_7066538195e7d18527334e4.94612526",          align: "right"      };     (function() {          var se = document.createElement("script");          se.type = "text/javascript";          se.async = true;          se.src = window.__8x8Chat.domain + window.__8x8Chat.path + "/CHAT/common/js/chat.js";         var os = document.getElementsByTagName("script")[0];         os.parentNode.insertBefore(se, os);      })();      // Chat Co-Browsing script     (function(e,i,g,h,t,c,o,b,r,w){         r=i.createElement(g);         r.setAttribute(h,c);         o&&r.setAttribute(o,b);         r.async=1;         r.src='https://'+t+'/license'+c+'/dist/primary-bundle.js';         w=i.getElementsByTagName(g)[0];         w.parentNode.insertBefore(r,w);     })     (window,document,'script','data-8x8-co-browsing','cb.8x8.com','5ec7d8e4b2b00806a442a1ce','data-8x8-co-browsing-mode','full-control');</script><!-- End 8x8 Chat Script -->
+        <!-- Begin 8x8 Chat Script --><script type="text/javascript">     
+
+		window.__8x8Chat = {          uuid: "script_7066538195e7d18527334e4.94612526",          tenant: "YW1lcmljYW5jb2xsZWdpYXQwMQ",          channel: "ACM Chat",          domain: "https://vcc-na38.8x8.com",          path: "/.",          buttonContainerId: "__8x8-chat-button-container-script_7066538195e7d18527334e4.94612526",          align: "right"      };
+		function ciq_load_8x8chat() {          var se = document.createElement("script");          se.type = "text/javascript";          se.async = true;          se.src = window.__8x8Chat.domain + window.__8x8Chat.path + "/CHAT/common/js/chat.js";         var os = document.getElementsByTagName("script")[0];         os.parentNode.insertBefore(se, os);      }
+
+		// Chat Co-Browsing script     (function(e,i,g,h,t,c,o,b,r,w){         r=i.createElement(g);         r.setAttribute(h,c);         o&&r.setAttribute(o,b);         r.async=1;         r.src='https://'+t+'/license'+c+'/dist/primary-bundle.js';         w=i.getElementsByTagName(g)[0];         w.parentNode.insertBefore(r,w);     })     (window,document,'script','data-8x8-co-browsing','cb.8x8.com','5ec7d8e4b2b00806a442a1ce','data-8x8-co-browsing-mode','full-control');
+
+	</script><!-- End 8x8 Chat Script -->
         <script type="text/javascript">$.ajax({	type: 'GET',	dataType: 'json',	data: {"f": "GetSummary"},	url: '/ajax/default.aspx',	success: function (o) {		if (!o.Success) return;		var i = o.Items;		$(".cartLink").html('<span class="mliconImage iconCart">&nbsp;</span><span class="mobileHide"> Shopping Cart </span><span id="spanCartTotal">(' + i + ') Item' + (i == 1 ? '' : 's') + '</span>');     SetCartOpenTab(i);	}});</script>
     </form>
 
@@ -2288,6 +2296,7 @@ function rampt_delayed_scripts()
 		}
 	}
 
+	ciq_load_8x8chat();
 	window.addEventListener('load', HawkSearch.initAutoSuggest, false);
 }
 		</script>
