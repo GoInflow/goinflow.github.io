@@ -251,6 +251,15 @@
             require(['//edge1.certona.net/cd/bef98c28/keh.com/scripts/resonance.js'],function() {});
         });
     </script>
+    <script>
+        setTimeout(function(){
+            var delayedScripts = document.querySelectorAll('script[data-script-src]');
+            delayedScripts.forEach(function(script){
+                script.setAttribute('src', script.getAttribute('data-script-src'));
+                console.log('delayed scripts loaded');
+            });
+        }, 1350)
+    </script>
 </head>
 <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/images/loading.svg"}}' class="cms-home cms-index-index page-layout-homepage">
 
