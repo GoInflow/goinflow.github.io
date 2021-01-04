@@ -7,6 +7,16 @@
             "baseUrl": "https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US"
         };
     </script>
+    <script>
+        function waitForRequireLoader(callback){
+            var require_loader_interval = setInterval(function(){
+                if(typeof window.require === 'function'){
+                     callback();
+                     clearInterval(require_loader_interval);
+                }
+            }, 1000);
+        }
+    </script>
     <meta charset="utf-8" />
     <meta name="title" content="Used Cameras, Lenses &amp; Gear For Sale | Buy &amp; Sell at KEH Camera" />
     <meta name="description" content="Buy &amp; sell used cameras, lenses, gear, &amp; other photography equipment at KEH Camera&#039;s online store. Save up to 40% off retail price &amp; get a 180-day warranty." />
@@ -35,10 +45,16 @@
     <link rel="stylesheet" type="text/css" rel="stylesheet" media="print" href="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/css/print.css" />
     <link rel="icon" type="image/x-icon" href="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/Magento_Theme/favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/Magento_Theme/favicon.ico" />
-    <script type="text/javascript" src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/requirejs/require.js"></script>
-    <script type="text/javascript" src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/mage/requirejs/mixins.js" async></script>
-    <script type="text/javascript" src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/requirejs-config.js" async></script>
-    <script type="text/javascript" src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/mage/polyfill.js" async></script>
+    <script type="text/javascript" data-script-src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/requirejs/require.js" data-script-delay="1350"></script>
+    <script type="text/javascript" data-script-src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/mage/requirejs/mixins.js" async data-script-delay="1359"></script>
+    <script type="text/javascript" id="requirejs-config-script-src" data-config-script-src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/requirejs-config.js" async></script>
+    <script>
+        waitForRequireLoader(function(){
+            var configScript = document.querySelector('#requirejs-config-script-src');
+            configScript.setAttribute('src', configScript.getAttribute('data-config-script-src'));
+        });
+    </script>
+    <script type="text/javascript" data-script-src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/mage/polyfill.js" async data-script-delay="1370"></script>
     <script type="text/javascript" src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/Bitpay_BPCheckout/js/bitpay/config.js" async></script>
     <!--[if IE 11]>
     <script  type="text/javascript"  src="https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/js/vendor/picturefill.min.js" async></script>
@@ -136,128 +152,131 @@
 
 
     <script>
-        require([
-            'jquery',
-            'Inchoo_Certona/js/slick.min',
-            'Inchoo_Certona/js/certonaResonance'
-        ], function ($) {
+        waitForRequireLoader(function(){
+            require([
+                'jquery',
+                'Inchoo_Certona/js/slick.min',
+                'Inchoo_Certona/js/certonaResonance'
+            ], function ($) {
 
-            var slickConfig = {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                arrows: true,
-                dots: true,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 3,
-                            slidesToScroll: 3
+                var slickConfig = {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: true,
+                    dots: true,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 420,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
                         }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 420,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            };
+                    ]
+                };
 
-            var slickConfigMini = {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                arrows: true,
-                dots: true,
-                infinite: true,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3
+                var slickConfigMini = {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: true,
+                    dots: true,
+                    infinite: true,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 420,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
                         }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 420,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            };
+                    ]
+                };
 
-            var slickConfigAcp = {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                arrows: true,
-                dots: true,
-                infinite: false,
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3
+                var slickConfigAcp = {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: true,
+                    dots: true,
+                    infinite: false,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2
+                            }
+                        },
+                        {
+                            breakpoint: 420,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
                         }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 420,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            };
+                    ]
+                };
 
-            var certonaResonance = $('certonaResonance');
+                var certonaResonance = $('certonaResonance');
 
-            var certona = {"pagetype":"home","visualsearch":false,"rrec":true};
-            certona.device = certonaResonance.getDeviceType();
-            window.certona = certona;
+                var certona = {"pagetype":"home","visualsearch":false,"rrec":true};
+                certona.device = certonaResonance.getDeviceType();
+                window.certona = certona;
 
-            window.certonaRecommendations =  function (response) {
-                certonaResonance.setSlickConfig(slickConfig, slickConfigMini, slickConfigAcp, response);
-            }
+                window.certonaRecommendations =  function (response) {
+                    certonaResonance.setSlickConfig(slickConfig, slickConfigMini, slickConfigAcp, response);
+                }
 
-            require(['//edge1.certona.net/cd/bef98c28/keh.com/scripts/resonance.js'],function() {});
-        });
+                require(['//edge1.certona.net/cd/bef98c28/keh.com/scripts/resonance.js'],function() {});
+            });
+        })
     </script>
     <script>
-        setTimeout(function(){
-            var delayedScripts = document.querySelectorAll('script[data-script-src]');
-            delayedScripts.forEach(function(script){
+        var delayedScripts = document.querySelectorAll('script[data-script-src]');
+        delayedScripts.forEach(function(script){
+            var delay = script.getAttribute('data-script-delay') || 1;
+            setTimeout(function(){
                 script.setAttribute('src', script.getAttribute('data-script-src'));
-                console.log('delayed scripts loaded');
-            });
-        }, 1350)
+                console.log('delayed script loaded');
+            }, delay)
+        });
     </script>
 </head>
 <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/images/loading.svg"}}' class="cms-home cms-index-index page-layout-homepage">
@@ -331,12 +350,14 @@
     </div>
 </noscript>
 <script>
-    require.config({
-        map: {
-            '*': {
-                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter'
+    waitForRequireLoader(function(){
+        require.config({
+            map: {
+                '*': {
+                    wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter'
+                }
             }
-        }
+        });
     });
 </script>
 <script>
@@ -344,66 +365,79 @@
     window.cookiesConfig.secure = true;
 </script>
 <script>
-    require.config({
-        paths: {
-            googleMaps: 'https\u003A\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs\u003Fv\u003D3\u0026key\u003D'
-        },
-        config: {
-            'Magento_PageBuilder/js/utils/map': {
-                style: ''
+    waitForRequireLoader(function(){
+        require.config({
+            paths: {
+                googleMaps: 'https\u003A\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs\u003Fv\u003D3\u0026key\u003D'
             },
-            'Magento_PageBuilder/js/content-type/map/preview': {
-                apiKey: '',
-                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.keh.com\u002Fshop\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
-            },
-            'Magento_PageBuilder/js/form/element/map': {
-                apiKey: '',
-                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.keh.com\u002Fshop\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
-            },
-        }
+            config: {
+                'Magento_PageBuilder/js/utils/map': {
+                    style: ''
+                },
+                'Magento_PageBuilder/js/content-type/map/preview': {
+                    apiKey: '',
+                    apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.keh.com\u002Fshop\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+                },
+                'Magento_PageBuilder/js/form/element/map': {
+                    apiKey: '',
+                    apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.keh.com\u002Fshop\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+                },
+            }
+        });
     });
 </script>
 <script>
-    require.config({
-        shim: {
-            'Magento_PageBuilder/js/utils/map': {
-                deps: ['googleMaps']
+    waitForRequireLoader(function(){
+        require.config({
+            shim: {
+                'Magento_PageBuilder/js/utils/map': {
+                    deps: ['googleMaps']
+                }
             }
-        }
+        });
     });
 </script>
 
 
-<script type="text/javascript" async>    if (document.querySelector('html').classList.contains('ie11')) {
-    require(['js/vendor/stickyfill.min'],
-        function() {
-            var elements = document.querySelectorAll('.sticky');
-            Stickyfill.add(elements);
-        }
-    );
-}
-</script>
-<script type="text/javascript" async>    if (document.querySelector('html').classList.contains('ie11')) {
-    require(['js/vendor/picturefill.min'],
-        function() {
-            // polyfill for nodeList.forEach method
-            NodeList.prototype.forEach = function(callback) {
-                for (var i = 0; i < this.length; i++) {
-                    callback.call(this, this[i], i, this);
+<script type="text/javascript" async>
+    waitForRequireLoader(function(){
+        if (document.querySelector('html').classList.contains('ie11')) {
+            require(['js/vendor/stickyfill.min'],
+                function() {
+                    var elements = document.querySelectorAll('.sticky');
+                    Stickyfill.add(elements);
                 }
-            }
+            );
         }
-    );
-}
+    })
 </script>
-<div class="page-wrapper"><header class="page-header page-header--alt sticky"><div id="top-banner" class="top-banner"><script type="text/javascript">     require([
-    'jquery'
-], function ($) {
-    $.post('https://www.keh.com/shop/headerbanner/ajax/load/')
-        .done(function (response) {
-            $('#top-banner').html(response);
+<script type="text/javascript" async>
+    waitForRequireLoader(function(){
+        if (document.querySelector('html').classList.contains('ie11')) {
+            require(['js/vendor/picturefill.min'],
+                function() {
+                    // polyfill for nodeList.forEach method
+                    NodeList.prototype.forEach = function(callback) {
+                        for (var i = 0; i < this.length; i++) {
+                            callback.call(this, this[i], i, this);
+                        }
+                    }
+                }
+            );
+        }
+    });
+</script>
+<div class="page-wrapper"><header class="page-header page-header--alt sticky"><div id="top-banner" class="top-banner"><script type="text/javascript">
+    waitForRequireLoader(function(){
+        require([
+            'jquery'
+        ], function ($) {
+            $.post('https://www.keh.com/shop/headerbanner/ajax/load/')
+                .done(function (response) {
+                    $('#top-banner').html(response);
+                });
         });
-});
+    });
 </script></div><div class="header-mainbar header-mainbar--v2"><div class="header-mainbar-inner container">
     <div class="logo-column">
         <a class="logo" href="https://www.keh.com" title="" aria-label="KEH Logo">
@@ -1377,9 +1411,11 @@
     </div>
         </section>
         <script>
-            require(['jquery','reversecheckout-search-homepage'], function($) {
-                $('#sell-search-items-input').on('keyup', function(event) {
-                    InchooReverseCheckoutSearchHomepage.getSearchData('https://www.keh.com/sell',this.value,false);
+            waitForRequireLoader(function(){
+                require(['jquery','reversecheckout-search-homepage'], function($) {
+                    $('#sell-search-items-input').on('keyup', function(event) {
+                        InchooReverseCheckoutSearchHomepage.getSearchData('https://www.keh.com/sell',this.value,false);
+                    });
                 });
             });
         </script>
@@ -1856,7 +1892,11 @@
             })('scarab-js-api');
         </script>
         <script src='https://d22q3dafggn5rg.cloudfront.net/emarsys-m2-email-after-233.js'></script>
-        <script>Emarsys.Magento2.track({"product":false,"category":false,"localizedCategory":false,"store":{"merchantId":"1120D4B78EBCBCA6"},"search":false,"exchangeRate":1,"slug":"shop"});</script>
+        <script>
+            waitForRequireLoader(function(){
+                Emarsys.Magento2.track({"product":false,"category":false,"localizedCategory":false,"store":{"merchantId":"1120D4B78EBCBCA6"},"search":false,"exchangeRate":1,"slug":"shop"});
+            });
+        </script>
     </div></div></div></main><div class="page-bottom"><div class="content"><div class="aw-acp-popup aw-acp-popup-with-anim mfp-hide" data-mage-init='{"awACPDialog": {}}' data-role="aw-acp-ui">
     <div data-role="update"></div>
     <div data-role="progress">
@@ -1923,42 +1963,46 @@
     }
 </script>
     <script>
-        require([
-            'jquery',
-            'mage/mage'
-        ], function($, widgetAddToCart) {
-            $(document).ajaxComplete(function(event, xhr) {
-                if (xhr.responseText) {
-                    try {
-                        eval("var json = " + xhr.responseText + " || {}");
-                    } catch (e) {
-                        return;
+        waitForRequireLoader(function(){
+            require([
+                'jquery',
+                'mage/mage'
+            ], function($, widgetAddToCart) {
+                $(document).ajaxComplete(function(event, xhr) {
+                    if (xhr.responseText) {
+                        try {
+                            eval("var json = " + xhr.responseText + " || {}");
+                        } catch (e) {
+                            return;
+                        }
+                        /* Aheadworks ARP compatibility */
+                        if (json.arp_block_content) {
+                            $(".aw-arp-container__item button.action.tocart").mage('widgetAddToCart', {
+                                "formKey": "wSXL8E6CQ7BudTFS"                    });
+                        }
+                        /* Aheadworks Wbtab compatibility */
+                        if (json.wbtab_block_content) {
+                            $(".products-aw_wbtab button.action.tocart").mage('widgetAddToCart', {
+                                "formKey": "wSXL8E6CQ7BudTFS"                    });
+                        }
+                        /* Aheadworks Wvtav compatibility */
+                        if (json.wvtav_content_top !== undefined) {
+                            $(".aw-wvtav-container button.action.tocart").mage('widgetAddToCart', {
+                                "formKey": "wSXL8E6CQ7BudTFS"                    });
+                        }
                     }
-                    /* Aheadworks ARP compatibility */
-                    if (json.arp_block_content) {
-                        $(".aw-arp-container__item button.action.tocart").mage('widgetAddToCart', {
-                            "formKey": "wSXL8E6CQ7BudTFS"                    });
-                    }
-                    /* Aheadworks Wbtab compatibility */
-                    if (json.wbtab_block_content) {
-                        $(".products-aw_wbtab button.action.tocart").mage('widgetAddToCart', {
-                            "formKey": "wSXL8E6CQ7BudTFS"                    });
-                    }
-                    /* Aheadworks Wvtav compatibility */
-                    if (json.wvtav_content_top !== undefined) {
-                        $(".aw-wvtav-container button.action.tocart").mage('widgetAddToCart', {
-                            "formKey": "wSXL8E6CQ7BudTFS"                    });
-                    }
-                }
+                });
             });
         });
     </script>
     <script>
-        require([
-            'jquery',
-            'Aheadworks_Ajaxcartpro/js/config'
-        ], function($, awAcpConfig) {
-            awAcpConfig.setOptions({"acpAddToCartUrl":"https:\/\/www.keh.com\/shop\/aw_ajaxcartpro\/cart\/add\/","acpGetBlockContentUrl":"https:\/\/www.keh.com\/shop\/aw_ajaxcartpro\/block\/content\/","checkoutUrl":"https:\/\/www.keh.com\/shop\/checkout\/"});
+        waitForRequireLoader(function(){
+            require([
+                'jquery',
+                'Aheadworks_Ajaxcartpro/js/config'
+            ], function($, awAcpConfig) {
+                awAcpConfig.setOptions({"acpAddToCartUrl":"https:\/\/www.keh.com\/shop\/aw_ajaxcartpro\/cart\/add\/","acpGetBlockContentUrl":"https:\/\/www.keh.com\/shop\/aw_ajaxcartpro\/block\/content\/","checkoutUrl":"https:\/\/www.keh.com\/shop\/checkout\/"});
+            });
         });
     </script>
 </div></div><div class="page-newsletter"><div class="newsletter-wrapper container">
