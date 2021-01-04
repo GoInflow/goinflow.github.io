@@ -3703,7 +3703,7 @@ var google_remarketing_only = true;
           HawkSearch.TrackingUrl = HawkSearch.TrackingUrl.replace('http://', 'https://');
       }
 }(window.HawkSearch = window.HawkSearch || {}));
-document.write(unescape("%3Cscript src='" + HawkSearch.BaseIncludesUrl + "/sites/magazineline/includes/hawksearch.min.js' type='text/javascript'%3E%3C/script%3E"));
+document.write(unescape("%3Cscript data-rampt-delay-src='" + HawkSearch.BaseIncludesUrl + "/sites/magazineline/includes/hawksearch.min.js' type='text/javascript'%3E%3C/script%3E"));
 HawkSearch.initAutoSuggest = function () {
    HawkSearch.suggestInit('#txtSearch', {lookupUrlPrefix: HawkSearch.TrackingUrl + '/?fn=ajax&f=GetSuggestions&df=Search&hawksessionid={0}{1}', hiddenDivName: '', isAutoWidth: false, width:300});
    HawkSearch.suggestInit('#txtHomeSearch', {lookupUrlPrefix: HawkSearch.TrackingUrl + '/?fn=ajax&f=GetSuggestions&df=Search&hawksessionid={0}{1}', hiddenDivName: '', isAutoWidth: false, width:300});
@@ -3784,7 +3784,17 @@ function rampt_delayed_scripts()
 	}
 
 	ciq_load_8x8chat();
-	window.addEventListener('load', HawkSearch.initAutoSuggest, false);
+}
+function ciq_hawksearch()
+{
+	if(typeof(HawkSearch) == "object")
+	{
+		HawkSearch.initAutoSuggest;
+	}
+	else
+	{
+		setTimeout(ciq_hawksearch, 200);
+	}
 }
 		</script>
   </body>
