@@ -1901,16 +1901,16 @@
                 var magentoScript = document.querySelector('[data-magento-script-src]');
                 magentoScript.setAttribute('src', magentoScript.getAttribute('data-magento-script-src'));
             }, 1360)
-            waitForRequireLoader(function(){
-                var magento_script_interval = setInterval(function(){
-                    console.log('magento_script_interval running');
-                    if(window.Emarsys){
-                        Emarsys.Magento2.track({"product":false,"category":false,"localizedCategory":false,"store":{"merchantId":"1120D4B78EBCBCA6"},"search":false,"exchangeRate":1,"slug":"shop"});
-                        clearInterval(magento_script_interval);
-                        console.log('magento_script_interval stopped');
-                    }
-                }, 1000);
-            });
+                waitForRequireLoader(function(){
+                    var magento_script_interval = setInterval(function(){
+                        console.log('magento_script_interval running');
+                        if(window.Emarsys){
+                            Emarsys.Magento2.track({"product":false,"category":false,"localizedCategory":false,"store":{"merchantId":"1120D4B78EBCBCA6"},"search":false,"exchangeRate":1,"slug":"shop"});
+                            clearInterval(magento_script_interval);
+                            console.log('magento_script_interval stopped');
+                        }
+                    }, 1000);
+                });
         </script>
     </div></div></div></main><div class="page-bottom"><div class="content"><div class="aw-acp-popup aw-acp-popup-with-anim mfp-hide" data-mage-init='{"awACPDialog": {}}' data-role="aw-acp-ui">
     <div data-role="update"></div>
