@@ -16,7 +16,7 @@
                     clearInterval(require_loader_interval);
                     console.log('require_loader_interval stopped');
                 }
-            }, 4000);
+            }, 5000);
         }
     </script>
     <meta charset="utf-8" />
@@ -145,7 +145,7 @@ waitForRequireLoader(function(){
             })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
         });
     </script>
-    <script data-script-src="https://cdn.attn.tv/keh/dtag.js" async data-script-delay="1370"data-script-delay="4000"></script>
+    <script data-script-src="https://cdn.attn.tv/keh/dtag.js" async data-script-delay="4000"></script>
     <script>
         waitForRequireLoader(function(){
             __attentive_domain="keh.attn.tv",function(){window.__attentive={invoked:!1,show:function(){this.invoked=!0}};var t=!1,e=function(){if(document.readyState&&!/loaded|complete/.test(document.readyState))return void setTimeout(e,10);if(!t)return t=!0,void setTimeout(e,50);var n=document.createElement("script");n.setAttribute("async","true"),n.type="text/javascript",n.src="https://cdn.attn.tv/loader.js",((document.getElementsByTagName("head")||[null])[0]||document.getElementsByTagName("script")[0].parentNode).appendChild(n)};if(document.readyState && /loaded|complete/.test(document.readyState))e();else window.addEventListener?window.addEventListener("load",e,!1):window.attachEvent("onload",e)}(),window.__attentive.show();
@@ -1891,14 +1891,16 @@ waitForRequireLoader(function(){
 </script>
     </div><div class="emarsys-snippets">
         <script type="text/javascript">
-            var ScarabQueue = ScarabQueue || [];
-            (function(id) {
-                if (document.getElementById(id)) return;
-                var js = document.createElement('script'); js.id = id;
-                js.src = '\/' + '\/' + 'cdn.scarabresearch.com/js/1120D4B78EBCBCA6/scarab-v2.js';
-                var fs = document.getElementsByTagName('script')[0];
-                fs.parentNode.insertBefore(js, fs);
-            })('scarab-js-api');
+            waitForRequireLoader(function(){
+                var ScarabQueue = ScarabQueue || [];
+                (function(id) {
+                    if (document.getElementById(id)) return;
+                    var js = document.createElement('script'); js.id = id;
+                    js.src = '\/' + '\/' + 'cdn.scarabresearch.com/js/1120D4B78EBCBCA6/scarab-v2.js';
+                    var fs = document.getElementsByTagName('script')[0];
+                    fs.parentNode.insertBefore(js, fs);
+                })('scarab-js-api');
+            });
         </script>
         <script data-magento-script-src='https://d22q3dafggn5rg.cloudfront.net/emarsys-m2-email-after-233.js'></script>
         <script>
