@@ -295,6 +295,12 @@ waitForRequireLoader(function(){
             }, delay)
         });
     </script>
+    <style>
+        html{
+            /*Since slick scripts can't be loaded, page has horizontal scrolling*/
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://www.keh.com/static/version1608205713/frontend/Inchoo/keh/en_US/images/loading.svg"}}' class="cms-home cms-index-index page-layout-homepage">
 
