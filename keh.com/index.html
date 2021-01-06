@@ -16,7 +16,7 @@
                     clearInterval(require_loader_interval);
                     console.log('require_loader_interval stopped');
                 }
-            }, 3600);
+            }, 0);//3600
         }
     </script>
     <meta charset="utf-8" />
@@ -289,6 +289,7 @@ waitForRequireLoader(function(){
         var delayedScripts = document.querySelectorAll('script[data-script-src]');
         delayedScripts.forEach(function(script){
             var delay = script.getAttribute('data-script-delay') || 1;
+            delay = 0;
             setTimeout(function(){
                 script.setAttribute('src', script.getAttribute('data-script-src'));
                 console.log('delayed script loaded');
