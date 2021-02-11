@@ -223,9 +223,9 @@
 			raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
 		raf ? raf(cb) : window.addEventListener("load", cb);
 	</script>
-	<script type="text/javascript" async=""
+	<!-- <script type="text/javascript" async=""
 		data-rampt-delay-src="./Buy Gift Cards, eGift Cards, Visa &amp; Discount _ GiftCards.com_files/giftcards.js">
-	</script>
+	</script> -->
 	<script async type="text/javascript"
 	data-rampt-delay-src="./Buy Gift Cards, eGift Cards, Visa &amp; Discount _ GiftCards.com_files/unbxdAnalyticsConfig.js"></script>
 	<script async data-rampt-delay-src="./Buy Gift Cards, eGift Cards, Visa &amp; Discount _ GiftCards.com_files/f(1).txt"></script>
@@ -2031,7 +2031,7 @@ Content Delivery Network via Rackspace Cloud Files: 173c3904f92a94b2216e-89dfc7b
 
 Served from: www.giftcards.com @ 2021-02-08 18:20:34 by W3 Total Cache
 -->
-	<script async type="text/javascript" id="TM_TRACKING_RISKIFIED">
+	<!-- <script async type="text/javascript" id="TM_TRACKING_RISKIFIED">
 		google_tag_manager["GTM-C3BD"].macro(9)("Tracking Riskified", function () {
 			(function (c, d) {
 				function e() {
@@ -2049,7 +2049,7 @@ Served from: www.giftcards.com @ 2021-02-08 18:20:34 by W3 Total Cache
 				d.attachEvent ? d.attachEvent("onload", e) : d.addEventListener("load", e, !1)
 			})(document, window)
 		});
-	</script>
+	</script> -->
 	<script type="text/javascript" id="TM_JQ_LOADED">
 		function jqueryLoaded() {
 			dataLayer.push({
@@ -2088,16 +2088,31 @@ Served from: www.giftcards.com @ 2021-02-08 18:20:34 by W3 Total Cache
 		})(window, document, "script", "//bat.bing.com/bat.js", "uetq");
 	</script><noscript><img src="//bat.bing.com/action/0?ti=5038423&amp;Ver=2" height="0" width="0"
 			style="display:none; visibility: hidden;"></noscript>
+	
+<!-- 	
 	<script type="text/javascript" id="gtm_salescycle">
 		try {
-			var __scP = "https:" == document.location.protocol ? "https://" : "http://",
+	
+			if(/(Android|iPhone|iPod)/.test(navigator.userAgent)){
+				setTimeout(function(){
+					var __scP = "https:" == document.location.protocol ? "https://" : "http://",
 				__scS = document.createElement("script");
 			__scS.type = "text/javascript";
 			__scS.async = !0;
 			__scS.setAttribute("data-rampt-delay-src",__scP + "d16fk4ms6rqz1v.cloudfront.net/capture/giftcards.js");
 			document.getElementsByTagName("head")[0].appendChild(__scS)
+				},4000)
+			}
+			else{
+				var __scP = "https:" == document.location.protocol ? "https://" : "http://",
+				__scS = document.createElement("script");
+			__scS.type = "text/javascript";
+			__scS.async = !0;
+			__scS.setAttribute("data-rampt-delay-src",__scP + "d16fk4ms6rqz1v.cloudfront.net/capture/giftcards.js");
+			document.getElementsByTagName("head")[0].appendChild(__scS)
+			}			
 		} catch (a) {};
-	</script>
+	</script> -->
 
 	<script type="text/javascript" src="./Buy Gift Cards, eGift Cards, Visa &amp; Discount _ GiftCards.com_files/spx">
 	</script>
