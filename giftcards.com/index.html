@@ -3,6 +3,18 @@
 <html lang="en-US">
 
 <head>
+<script>
+let cls = 0;
+
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntries()) {
+    if (!entry.hadRecentInput) {
+      cls += entry.value;
+      console.log('Current CLS value:', cls, entry);
+    }
+  }
+}).observe({type: 'layout-shift', buffered: true});
+</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Buy Gift Cards, eGift Cards, Visa &amp; Discount | GiftCards.com</title>
 	<link rel="pingback" href="https://www.giftcards.com/xmlrpc.php">
