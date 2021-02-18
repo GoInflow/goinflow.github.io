@@ -19,6 +19,18 @@
 
 <html>
   <head>
+	  <script>
+	  let cls = 0;
+
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntries()) {
+    if (!entry.hadRecentInput) {
+      cls += entry.value;
+      console.log('Current CLS value:', cls, entry);
+    }
+  }
+}).observe({type: 'layout-shift', buffered: true});
+	  </script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="theme-color" content="#37393e" />
