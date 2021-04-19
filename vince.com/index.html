@@ -1901,7 +1901,7 @@ dw.applepay = {"action":{"cancel":"https:\/\/www.vince.com\/on\/demandware.store
 window.addEventListener("load", rampt_delay_load, false);
 
 // in case that onload event doesn't trigger sooner, wait 4 seconds to execute rampt_delay_load
-setTimeout(rampt_delay_load, 4000);
+setTimeout(rampt_delay_load, 6000);
 
 function rampt_delay_load()
 {
@@ -1921,7 +1921,7 @@ function rampt_delay_load()
 		// checks if device is iPhone, iPod or android to delay the execution of rampt_delayed_scripts 4 seconds
 		if(/(Android|iPhone|iPod)/.test(navigator.userAgent))
 		{
-			setTimeout(rampt_delayed_scripts, 4000);
+			setTimeout(rampt_delayed_scripts, 6000);
 		}
 		else
 		{
