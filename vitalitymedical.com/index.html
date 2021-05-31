@@ -24,15 +24,19 @@
 </script>
 <script type="text/javascript" src="https://www.vitalitymedical.com/skin/frontend/rwd/responsive/js/hover_jquery.js"></script>
 <![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/aff159ea36b5efdf.css" media="all" /><script type="text/javascript" src="https://www.vitalitymedical.com/skin/extendware/ewminify/4a3b247c84a96aaf.js"></script><link rel="canonical" href="https://www.vitalitymedical.com" /><!--[if  (lte IE 8) & (!IEMobile)]>
+<!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/aff159ea36b5efdf.css" media="all" />-->
+    <link type="text/css" rel="stylesheet" href="./assets/styles.css" media="all" />
+    <script type="text/javascript" src="https://www.vitalitymedical.com/skin/extendware/ewminify/4a3b247c84a96aaf.js"></script><link rel="canonical" href="https://www.vitalitymedical.com" /><!--[if  (lte IE 8) & (!IEMobile)]>
     <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/b8675e874b357c20.css" media="all"/><![endif]-->
     <!--[if (gte IE 9) | (IEMobile)]><!-->
-    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/d1324550cf707261.css" media="all" /><![endif]-->
+<!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/d1324550cf707261.css" media="all" />-->
+
+    <![endif]-->
     <!--[if lt IE 8]>
     <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/e72a6827e2976275.css" media="all"/><![endif]-->
     <!--[if lte IE 7]>
     <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/11cabb007ec4660b.css" media="all"/><![endif]-->
-    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/frontend/rwd/responsive/css/stage.css" media="all" />
+<!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/frontend/rwd/responsive/css/stage.css" media="all" />-->
     <script type="text/javascript">
         //<![CDATA[
         Mage.Cookies.path     = '/';
@@ -45,7 +49,7 @@
         optionalZipCountries = ["HK","IE","MO","PA"];
         //]]>
     </script>
-    <link rel="stylesheet" type="text/css" href="https://www.vitalitymedical.com/skin/frontend/base/default/pronav/css/pronav.theme-default.css" media="all" />
+<!--    <link rel="stylesheet" type="text/css" href="https://www.vitalitymedical.com/skin/frontend/base/default/pronav/css/pronav.theme-default.css" media="all" />-->
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -87,6 +91,35 @@
     </script>
     <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=mW0Yt1O7kI20L7" style="display:none" height="1" width="1" alt="" /></noscript>
 
+    <script>
+    // Load slider images only on desktop screens
+        function updateSliderImageSourcesOnDesktop(){
+            if(document.body.clientWidth <= 770){
+                return;//The slider images are only used in viewports with a width greater or equal to 771px, so we won't load them on mobile
+            }
+            var sliderLazyImages = document.querySelectorAll('.lazy-inflow-demo-top-home-slider-img');
+            sliderLazyImages.forEach(function (img) {
+               var imgSrc = img.getAttribute('data-lazy-src');
+               img.setAttribute('src', imgSrc);
+            });
+        }
+
+        // We will trigger the http requests for the images only after the page has loaded
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                updateSliderImageSourcesOnDesktop();
+            }, 450);
+        })
+    </script>
+    <style>
+        /*Prevent layout shift before the images are loaded by declaring the slider height*/
+        .inflow-speed-test-slider{
+            background: #7d8286;
+            height: 24vw;
+            max-height: 390px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body class=" cms-index-index cms-">
 
@@ -1251,22 +1284,47 @@
                     });
                 });
         </script>
-            <div class="flexslider flexslider-7-8">
+            <div class="flexslider flexslider-7-8 inflow-speed-test-slider">
                 <ul class="slides">
                     <li>
-                        <a href="https://www.vitalitymedical.com/policy/vitality-medical-discounts#" target="_self" onclick="bannerClicks('684','8')" style="display:block"><img alt="$5 Off Most Orders Over $50" src="https://www.vitalitymedical.com/media/bannerslider/2/0/2020_chstarter_home_1600x390.jpg" /></a>
+                        <a href="https://www.vitalitymedical.com/policy/vitality-medical-discounts#" target="_self" onclick="bannerClicks('684','8')" style="display:block">
+                            <img alt="$5 Off Most Orders Over $50" data-lazy-src="https://www.vitalitymedical.com/media/bannerslider/2/0/2020_chstarter_home_1600x390.jpg" class="lazy-inflow-demo-top-home-slider-img"/>
+                            <noscript>
+                                <img alt="$5 Off Most Orders Over $50" src="https://www.vitalitymedical.com/media/bannerslider/2/0/2020_chstarter_home_1600x390.jpg" />
+                            </noscript>
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.vitalitymedical.com/personal-protective-equipment-ppe.html" target="_self" onclick="bannerClicks('804','8')" style="display:block"><img alt="Disinfect and Sanitize Your Home With Clorox! Kill Covid-19 in 15 Seconds! Bleach-Free!" src="https://www.vitalitymedical.com/media/bannerslider/2/0/202131_clorox_lysol_price_drop_hp.jpg" /></a>
+                        <a href="https://www.vitalitymedical.com/personal-protective-equipment-ppe.html" target="_self" onclick="bannerClicks('804','8')" style="display:block">
+                        <img alt="Disinfect and Sanitize Your Home With Clorox! Kill Covid-19 in 15 Seconds! Bleach-Free!" data-lazy-src="https://www.vitalitymedical.com/media/bannerslider/2/0/202131_clorox_lysol_price_drop_hp.jpg"  class="lazy-inflow-demo-top-home-slider-img"/>
+                        <noscript>
+                        <img alt="Disinfect and Sanitize Your Home With Clorox! Kill Covid-19 in 15 Seconds! Bleach-Free!" src="https://www.vitalitymedical.com/media/bannerslider/2/0/202131_clorox_lysol_price_drop_hp.jpg" />
+                        </noscript>
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.vitalitymedical.com/med-e-lert-automatic-pill-dispenser.html" target="_self" onclick="bannerClicks('824','8')" style="display:block"><img alt="Med-E-Lert Automatic Pill Dispenser on Sale" src="https://www.vitalitymedical.com/media/bannerslider/2/0/2021-med-e-lert-hp.jpg" /></a>
+                        <a href="https://www.vitalitymedical.com/med-e-lert-automatic-pill-dispenser.html" target="_self" onclick="bannerClicks('824','8')" style="display:block">
+                            <img alt="Med-E-Lert Automatic Pill Dispenser on Sale" data-lazy-src="https://www.vitalitymedical.com/media/bannerslider/2/0/2021-med-e-lert-hp.jpg" class="lazy-inflow-demo-top-home-slider-img"/>
+                            <noscript>
+                            <img alt="Med-E-Lert Automatic Pill Dispenser on Sale" src="https://www.vitalitymedical.com/media/bannerslider/2/0/2021-med-e-lert-hp.jpg" />
+                            </noscript>
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.vitalitymedical.com/medical-adjustable-hospital-beds.html" target="_self" onclick="bannerClicks('307','8')" style="display:block"><img alt="" src="https://www.vitalitymedical.com/media/bannerslider/h/o/hospitalbeds.png" /></a>
+                        <a href="https://www.vitalitymedical.com/medical-adjustable-hospital-beds.html" target="_self" onclick="bannerClicks('307','8')" style="display:block">
+                            <img alt="" data-lazy-src="https://www.vitalitymedical.com/media/bannerslider/h/o/hospitalbeds.png"  class="lazy-inflow-demo-top-home-slider-img"/>
+                            <noscript>
+                                <img alt="" src="https://www.vitalitymedical.com/media/bannerslider/h/o/hospitalbeds.png" />
+                            </noscript>
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.vitalitymedical.com/personal-protective-equipment-ppe.html" target="_self" onclick="bannerClicks('747','8')" style="display:block"><img alt="Shop Covid-19 (Coronavirus) and PPE (Personal Protective Equipment) Supplies!" src="https://www.vitalitymedical.com/media/bannerslider/2/0/2020coronavirus-ppe-hp-banner.jpg" /></a>
+                        <a href="https://www.vitalitymedical.com/personal-protective-equipment-ppe.html" target="_self" onclick="bannerClicks('747','8')" style="display:block">
+                            <img alt="Shop Covid-19 (Coronavirus) and PPE (Personal Protective Equipment) Supplies!" data-lazy-src="https://www.vitalitymedical.com/media/bannerslider/2/0/2020coronavirus-ppe-hp-banner.jpg"  class="lazy-inflow-demo-top-home-slider-img"/>
+                            <noscript>
+                                <img alt="Shop Covid-19 (Coronavirus) and PPE (Personal Protective Equipment) Supplies!" src="https://www.vitalitymedical.com/media/bannerslider/2/0/2020coronavirus-ppe-hp-banner.jpg" />
+                            </noscript>
+                        </a>
                     </li>
 
                 </ul>
