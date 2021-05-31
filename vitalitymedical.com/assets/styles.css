@@ -126,12 +126,12 @@
 }
 
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0,mirror=1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2,mirror=1);
   transform: scale(1, -1);
 }
 
@@ -9315,7 +9315,7 @@ a.skip-link {
   }
 
   #track-order:before {
-    background: url(/media/vm/top-icons.jpg);
+    background: url(https://www.vitalitymedical.com/media/vm/top-icons.jpg);
     background-repeat: no-repeat;
     background-position: -30px 0;
     width: 29px;
@@ -9326,7 +9326,7 @@ a.skip-link {
   }
 
   #phone-number:before {
-    background: url(/media/vm/top-icons.jpg);
+    background: url(https://www.vitalitymedical.com/media/vm/top-icons.jpg);
     background-repeat: no-repeat;
     background-position: -61px 0;
     width: 22px;
@@ -16037,7 +16037,7 @@ span.small-gray {
 }
 
 .instant-table-prod {
-  background: url(/media/vm/concentrator-instant.png);
+  background: url(https://www.vitalitymedical.com/media/vm/concentrator-instant.png);
   height: 156px;
   width: 410px;
   min-width: 410px;
@@ -16102,7 +16102,7 @@ input#Couponname {
 }
 
 .small-pads_1, .small-diapers_1, .small-incontinence-care, .small-ostomy-pouch, .small-nebulizer, .small-Oxygen-Concentrator, .small-cpap, .small-breathing-therapy, .small-trach-tubes_1, .small-catheter, .small-urinary-accessories_1, .small-urine-bag, .small-tape, .small-fauze, .small-wound-dressing, .small-bandages, .small-wound-care-prep, .exam-gloves, .patient-safety, .enteral_feeding, .needles-syringes, .hospital-supplies, .patient-misc, .s-1-piece-icon, .s-2-piece, .ostomy-skin-care, .ostomy-accessories, .just-for-men, .underpads, .just-for-women {
-  background: url(/media/menu_sprites.png) no-repeat;
+  background: url(https://www.vitalitymedical.com/media/menu_sprites.png) no-repeat;
 }
 
 .small-pads_1 {
@@ -16294,7 +16294,7 @@ input#Couponname {
 #gradient {
   width: 100%;
   height: 35px;
-  background: url(/media/bg-gradient.png) repeat-x;
+  background: url(https://www.vitalitymedical.com/media/bg-gradient.png) repeat-x;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -16695,20 +16695,20 @@ div#featured-categories-container a {
 .ma-bestseller-sldier-title {
   text-align: center;
   padding: 0 0 90px;
-  background: url(/media/vm/bg_title.png) no-repeat center bottom;
+  background: url(https://www.vitalitymedical.com/media/vm/bg_title.png) no-repeat center bottom;
 }
 
 .brand-slider-title {
   text-align: center;
   padding: 0 0 90px;
-  background: url(/media/vm/bg_title_brands.png) no-repeat center bottom;
+  background: url(https://www.vitalitymedical.com/media/vm/bg_title_brands.png) no-repeat center bottom;
   margin-bottom: 30px;
 }
 
 .cat-slider-title {
   text-align: center;
   padding: 0 0 90px;
-  background: url(/media/vm/bg_title_cat.png) no-repeat center bottom;
+  background: url(https://www.vitalitymedical.com/media/vm/bg_title_cat.png) no-repeat center bottom;
 }
 
 .banner-static-contain .banner-box a {
@@ -16735,7 +16735,7 @@ div#featured-categories-container a {
 }
 
 .banner-static-contain .banner-box1 .banner-hover .bg-top {
-  background: url(/media/vm/bg_banner_yellow.png) no-repeat scroll center;
+  background: url(https://www.vitalitymedical.com/media/vm/bg_banner_yellow.png) no-repeat scroll center;
 }
 
 .banner-hover .bg-top {
@@ -16815,7 +16815,7 @@ div#featured-categories-container a {
 }
 
 .banner-static-contain .banner-box2 .banner-hover .bg-top {
-  background: url(/media/vm/bg_banner_red.png) no-repeat scroll center;
+  background: url(https://www.vitalitymedical.com/media/vm/bg_banner_red.png) no-repeat scroll center;
 }
 
 .home-page a {
@@ -17087,7 +17087,7 @@ ul.bare-list {
 div#product-rad-block {
   position: relative;
   padding: 15px 30px;
-  background: #cc0934 url(/media/vm/red-pattern.png);
+  background: #cc0934 url(https://www.vitalitymedical.com/media/vm/red-pattern.png);
   margin-bottom: 20px;
   border: 0;
 }
@@ -17481,7 +17481,7 @@ body .promos > li {
   font-weight: 700;
   display: block;
   line-height: 48px;
-  background: #f5f5f5 url(/media/vm/gray-arrow.png) right center no-repeat;
+  background: #f5f5f5 url(https://www.vitalitymedical.com/media/vm/gray-arrow.png) right center no-repeat;
   border: 1px solid #e5e5e5;
 }
 
@@ -20533,5 +20533,361 @@ div.amshopby-column {
 
 .osano-cm-widget {
   display: none;
+}
+
+ul#pronav {
+  padding: 0 30px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+ul#pronav li.primary-pronav-item a.primary-pronav-link {
+  color: #fff;
+  padding: 0 10px;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ul#pronav.pn-left li.primary-pronav-item a.primary-pronav-link, ul#pronav.pn-right li.primary-pronav-item a.primary-pronav-link {
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+ul#pronav li.primary-pronav-item a.primary-pronav-link:hover, ul#pronav li.primary-pronav-item:hover a.primary-pronav-link {
+  color: #2e8ab8;
+  background: #fff;
+  padding-bottom: 2px;
+}
+
+ul#pronav.pn-left li.primary-pronav-item a.primary-pronav-link:hover, ul#pronav.pn-left li.primary-pronav-item:hover a.primary-pronav-link, ul#pronav.pn-right li.primary-pronav-item a.primary-pronav-link:hover, ul#pronav.pn-right li.primary-pronav-item:hover a.primary-pronav-link {
+  padding: 5px 25px;
+}
+
+ul#pronav li.primary-pronav-item .sub, ul#pronav li.primary-pronav-item .child-sub {
+  background: #fff;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul#pronav li.primary-pronav-item .sub .row ul {
+  background-image: none;
+  border-right: 1px solid #fff;
+  text-align: left;
+  padding: 0;
+  width: 17em;
+}
+
+ul#pronav li.primary-pronav-item .sub .row ul.last-ul {
+  border-right: none;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.last-li > a {
+  border-bottom: none;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.pronav-unsorted ul, ul#pronav li.primary-pronav-item .sub ul li.pronav-sosorted ul {
+  border: none;
+  height: 160px;
+  width: 13em;
+  float: right;
+  padding: 10px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-title {
+  font-weight: 700;
+  color: #272727 !important;
+  font-size: 0.8rem !important;
+  padding-left: 15px;
+  padding-top: 2px;
+}
+
+.pronav-thumb-image {
+  width: 50px;
+  float: left;
+  margin-right: 5px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.first-li > a {
+  border-top: 0;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-2 a {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e76200;
+  text-transform: uppercase;
+}
+
+.pronav-widget-category-image-link {
+  margin-top: 10px;
+  float: left;
+  width: 50px;
+  margin-left: 4px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-3 a {
+  font-size: 12px;
+  font-weight: 700;
+  color: #272727;
+  font-size: 0.8rem;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-4 a {
+  font-size: 12px;
+  padding-left: 17px;
+  color: #1268b2;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-4 a:hover {
+  color: #2e8ab8;
+  text-decoration: underline;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-5 a {
+  font-size: 10px;
+  padding-left: 50px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li a {
+  font-size: 12px;
+  text-decoration: none;
+  padding: 2px 0 2px 15px;
+  color: #4a4a4a;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li a:hover {
+  background-color: #fff;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-2 a:hover {
+  color: #000;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li.level-3 a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+ul#pronav li.primary-pronav-item .sub ul.columns-split, ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside ul, ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside.last-li {
+  border: none;
+}
+
+ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside {
+  border-right: 1px solid #fff;
+}
+
+ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside ul li a {
+  background: 0 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 2px 25px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside ul li.first-li > a {
+  border-top: none;
+}
+
+ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside ul li.last-li > a {
+  border-bottom: none;
+}
+
+ul#pronav li.primary-pronav-item .sub ul.columns-split li.columns-inside li a:hover {
+  background: #fff;
+}
+
+ul.ul-promo {
+  width: 300px !important;
+}
+
+.promo-container {
+  width: 280px;
+  height: 280px;
+  float: left;
+  padding: 10px;
+}
+
+.promo-container .promo-large {
+  width: 280px;
+  height: 158px;
+  background: #ccc;
+}
+
+.promo-container .promo-small {
+  width: 135px;
+  height: 112px;
+  background: #aaa;
+  margin-top: 10px;
+}
+
+.promo-container .promo-small.left-promo {
+  float: left;
+  clear: left;
+}
+
+.promo-container .promo-small.right-promo {
+  float: right;
+  clear: right;
+}
+
+.promo-container a {
+  padding: 0 !important;
+}
+
+ul#pronav li.primary-pronav-item#category-products .sub .row ul {
+  width: 1020px;
+}
+
+ul#pronav li.primary-pronav-item .sub .row ul li .category-products {
+  padding: 10px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid {
+  background: #eee;
+  border: none;
+  padding: 10px;
+  margin: 0 0 5px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid.last {
+  margin: 0;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .item {
+  float: left;
+  width: 135px;
+  margin: 0 10px 0 0;
+  background: #fff;
+  padding: 10px;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .item.last {
+  margin: 0;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .item a {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .product-name, ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .price-box {
+  padding: 5px;
+  text-align: center;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .product-name a:hover {
+  background: 0 0;
+  color: #000;
+}
+
+ul#pronav li.primary-pronav-item .sub ul li .category-products .products-grid .actions {
+  position: static;
+  text-align: center;
+}
+
+ul#pronav li.primary-pronav-item#account-login .sub .row ul {
+  width: 855px;
+}
+
+ul#pronav li.primary-pronav-item#account-login .sub .row ul li .account-login {
+  padding: 20px;
+}
+
+ul#pronav li.primary-pronav-item#account-login .sub .row ul li .account-login .buttons-set a {
+  border: none;
+  padding: 0;
+}
+
+ul#pronav li.primary-pronav-item#account-login .sub .row ul li .account-login .content {
+  background: #eee;
+  border: none;
+  padding: 20px;
+}
+
+ul#pronav li.primary-pronav-item#account-login .sub .row ul li .account-login .buttons-set {
+  border: none;
+  padding: 10px;
+  background: #fff;
+}
+
+#pronav-selection-container #pronav-select-toggle {
+  color: #636363;
+  background: #eee;
+}
+
+#pronav-selection-container #pronav-selection {
+  background: #f5f5f5;
+  border-bottom: 5px solid #a7c6dd;
+}
+
+.menu-custom-col {
+  float: left !important;
+  margin-left: 35px !important;
+}
+
+.custom-col {
+  background: #f5f5f5;
+}
+
+.subcat-thumb {
+  width: 15em !important;
+}
+
+#a-primary-see-all {
+  border-right: 0 !important;
+}
+
+.menu-small {
+  width: 13em !important;
+}
+
+.menu-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #272727;
+  font-size: 0.8rem;
+  margin-left: 15px;
+}
+
+.menu-small ul {
+  height: 145px !important;
+}
+
+a#all-cats {
+  background: #308ace;
+  color: #fff !important;
+  display: inline-block !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 16px !important;
+  text-align: center;
+  margin-top: 68px;
+}
+
+a#all-brands {
+  background: #308ace;
+  color: #fff !important;
+  display: inline-block !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 16px !important;
+  text-align: center;
+  margin-top: 90px;
+  margin-left: 12px;
+}
+
+a#all-cats:hover {
+  background-color: #2e8ab8 !important;
+  text-decoration: none !important;
+}
+
+a#all-brands:hover {
+  background-color: #2e8ab8 !important;
+  text-decoration: none !important;
 }
 /*# sourceMappingURL=styles.css.map*/
