@@ -26,7 +26,7 @@
 <![endif]-->
 <!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/aff159ea36b5efdf.css" media="all" />-->
     <link type="text/css" rel="stylesheet" href="./assets/styles.css" media="all" />
-    <script type="text/javascript" src="https://www.vitalitymedical.com/skin/extendware/ewminify/4a3b247c84a96aaf.js" data-script-delay="1000"></script><link rel="canonical" href="https://www.vitalitymedical.com" /><!--[if  (lte IE 8) & (!IEMobile)]>
+    <script type="text/javascript" data-deferred-script-src="https://www.vitalitymedical.com/skin/extendware/ewminify/4a3b247c84a96aaf.js" data-script-delay="1000"></script><link rel="canonical" href="https://www.vitalitymedical.com" /><!--[if  (lte IE 8) & (!IEMobile)]>
     <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/b8675e874b357c20.css" media="all"/><![endif]-->
     <!--[if (gte IE 9) | (IEMobile)]><!-->
 <!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/d1324550cf707261.css" media="all" />-->
@@ -39,8 +39,16 @@
 <!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/frontend/rwd/responsive/css/stage.css" media="all" />-->
     <script type="text/javascript">
         //<![CDATA[
-        Mage.Cookies.path     = '/';
-        Mage.Cookies.domain   = '.vitalitymedical.com';
+        var vitality_mage_interval = setInterval(function () {
+            console.info('vitality_mage_interval running');
+            if(typeof Mage === 'undefined'){
+                return;
+            }
+            clearInterval(vitality_mage_interval);
+            console.info('vitality_mage_interval stopped');
+            Mage.Cookies.path     = '/';
+            Mage.Cookies.domain   = '.vitalitymedical.com';
+        }, 1000)
         //]]>
     </script>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -70,7 +78,15 @@
     </script>
     <script data-deferred-script-src="https://cdn.noibu.com/collect.js" data-script-delay="1000"></script>
     <script type="text/javascript">//<![CDATA[
-    var Translator = new Translate([]);
+    var vitality_translator_interval = setInterval(function () {
+        console.info('vitality_translator_interval running');
+        if(typeof Translate === 'undefined'){
+            return;
+        }
+        clearInterval(vitality_translator_interval);
+        console.info('vitality_translator_interval stopped');
+        var Translator = new Translate([]);
+    }, 1000);
     //]]></script><script>(function(d){var e=d.createElement('script');e.src='https://td.yieldify.com/yieldify/code.js?w_uuid=323f610a-850f-4164-91cc-12af042b0949&k=1&loca='+window.location.href;e.async=true;d.getElementsByTagName('head')[0].appendChild(e);}(document));</script><!--[if lt IE 9]>
     <script>
         document.createElement('header');
@@ -107,7 +123,7 @@
             })();
         }, 1000);
     </script>
-    <script data-deferred-script-src="https://cmp.osano.com/Azyw1US5VZrxA1vpb/7a78af1a-5dab-42ee-8b5b-fe3699ba8cc6/osano.js" data-script-delay="1000"></script>
+    <script src="https://cmp.osano.com/Azyw1US5VZrxA1vpb/7a78af1a-5dab-42ee-8b5b-fe3699ba8cc6/osano.js" data-script-delay="1000"></script>
 
     <script type="text/javascript">
         _atrk_opts = { atrk_acct:"mW0Yt1O7kI20L7", domain:"vitalitymedical.com",dynamic: true};
@@ -1303,21 +1319,54 @@
                 </ul>
             </div></div></li></ul><div id="pronav-selection-container"><span class="icon-navigation"></span><a href="#pronav-select" id="pronav-select-toggle">Navigation</a><div id="pronav-selection"></div></div><script type="text/javascript" data-cfasync="false">myProNav = {};myProNav.bodyClass = "contacts-index-index";myProNav.proNavWidth = "auto";myProNav.proNavPosition = "default";myProNav.easingMethodShow = "jswing";myProNav.easingMethodHide = "easeOutQuint";myProNav.sensitivity = 3;myProNav.interval = 25;myProNav.timeout = 200;myProNav.fadeInTime = 50;myProNav.fadeOutTime = 200;myProNav.currentURL = "https://www.vitalitymedical.com/";myProNav.homeURL = "https://www.vitalitymedical.com/";</script><script type="text/javascript" defer="defer">
             //<![CDATA[
-            jQuery.easing.jswing=jQuery.easing.swing,jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(t,e,n,i,a){return jQuery.easing[jQuery.easing.def](t,e,n,i,a)},easeInQuad:function(t,e,n,i,a){return i*(e/=a)*e+n},easeOutQuad:function(t,e,n,i,a){return-i*(e/=a)*(e-2)+n},easeInOutQuad:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e+n:-i/2*(--e*(e-2)-1)+n},easeInCubic:function(t,e,n,i,a){return i*(e/=a)*e*e+n},easeOutCubic:function(t,e,n,i,a){return i*((e=e/a-1)*e*e+1)+n},easeInOutCubic:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e*e+n:i/2*((e-=2)*e*e+2)+n},easeInQuart:function(t,e,n,i,a){return i*(e/=a)*e*e*e+n},easeOutQuart:function(t,e,n,i,a){return-i*((e=e/a-1)*e*e*e-1)+n},easeInOutQuart:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e*e*e+n:-i/2*((e-=2)*e*e*e-2)+n},easeInQuint:function(t,e,n,i,a){return i*(e/=a)*e*e*e*e+n},easeOutQuint:function(t,e,n,i,a){return i*((e=e/a-1)*e*e*e*e+1)+n},easeInOutQuint:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e*e*e*e+n:i/2*((e-=2)*e*e*e*e+2)+n},easeInSine:function(t,e,n,i,a){return-i*Math.cos(e/a*(Math.PI/2))+i+n},easeOutSine:function(t,e,n,i,a){return i*Math.sin(e/a*(Math.PI/2))+n},easeInOutSine:function(t,e,n,i,a){return-i/2*(Math.cos(Math.PI*e/a)-1)+n},easeInExpo:function(t,e,n,i,a){return 0==e?n:i*Math.pow(2,10*(e/a-1))+n},easeOutExpo:function(t,e,n,i,a){return e==a?n+i:i*(-Math.pow(2,-10*e/a)+1)+n},easeInOutExpo:function(t,e,n,i,a){return 0==e?n:e==a?n+i:(e/=a/2)<1?i/2*Math.pow(2,10*(e-1))+n:i/2*(-Math.pow(2,-10*--e)+2)+n},easeInCirc:function(t,e,n,i,a){return-i*(Math.sqrt(1-(e/=a)*e)-1)+n},easeOutCirc:function(t,e,n,i,a){return i*Math.sqrt(1-(e=e/a-1)*e)+n},easeInOutCirc:function(t,e,n,i,a){return(e/=a/2)<1?-i/2*(Math.sqrt(1-e*e)-1)+n:i/2*(Math.sqrt(1-(e-=2)*e)+1)+n},easeInElastic:function(t,e,n,i,a){var o=1.70158,s=0,r=i;if(0==e)return n;if(1==(e/=a))return n+i;if(s||(s=.3*a),r<Math.abs(i)){r=i;var o=s/4}else var o=s/(2*Math.PI)*Math.asin(i/r);return-(r*Math.pow(2,10*(e-=1))*Math.sin((e*a-o)*(2*Math.PI)/s))+n},easeOutElastic:function(t,e,n,i,a){var o=1.70158,s=0,r=i;if(0==e)return n;if(1==(e/=a))return n+i;if(s||(s=.3*a),r<Math.abs(i)){r=i;var o=s/4}else var o=s/(2*Math.PI)*Math.asin(i/r);return r*Math.pow(2,-10*e)*Math.sin((e*a-o)*(2*Math.PI)/s)+i+n},easeInOutElastic:function(t,e,n,i,a){var o=1.70158,s=0,r=i;if(0==e)return n;if(2==(e/=a/2))return n+i;if(s||(s=a*(.3*1.5)),r<Math.abs(i)){r=i;var o=s/4}else var o=s/(2*Math.PI)*Math.asin(i/r);return 1>e?-.5*(r*Math.pow(2,10*(e-=1))*Math.sin((e*a-o)*(2*Math.PI)/s))+n:r*Math.pow(2,-10*(e-=1))*Math.sin((e*a-o)*(2*Math.PI)/s)*.5+i+n},easeInBack:function(t,e,n,i,a,o){return void 0==o&&(o=1.70158),i*(e/=a)*e*((o+1)*e-o)+n},easeOutBack:function(t,e,n,i,a,o){return void 0==o&&(o=1.70158),i*((e=e/a-1)*e*((o+1)*e+o)+1)+n},easeInOutBack:function(t,e,n,i,a,o){return void 0==o&&(o=1.70158),(e/=a/2)<1?i/2*(e*e*(((o*=1.525)+1)*e-o))+n:i/2*((e-=2)*e*(((o*=1.525)+1)*e+o)+2)+n},easeInBounce:function(t,e,n,i,a){return i-jQuery.easing.easeOutBounce(t,a-e,0,i,a)+n},easeOutBounce:function(t,e,n,i,a){return(e/=a)<1/2.75?i*(7.5625*e*e)+n:2/2.75>e?i*(7.5625*(e-=1.5/2.75)*e+.75)+n:2.5/2.75>e?i*(7.5625*(e-=2.25/2.75)*e+.9375)+n:i*(7.5625*(e-=2.625/2.75)*e+.984375)+n},easeInOutBounce:function(t,e,n,i,a){return a/2>e?.5*jQuery.easing.easeInBounce(t,2*e,0,i,a)+n:.5*jQuery.easing.easeOutBounce(t,2*e-a,0,i,a)+.5*i+n}}),function(t){t.fn.hoverIntent=function(e,n){var i={sensitivity:7,interval:100,timeout:0};i=t.extend(i,n?{over:e,out:n}:e);var a,o,s,r,u=function(t){a=t.pageX,o=t.pageY},l=function(e,n){return n.hoverIntent_t=clearTimeout(n.hoverIntent_t),Math.abs(s-a)+Math.abs(r-o)<i.sensitivity?(t(n).unbind("mousemove",u),n.hoverIntent_s=1,i.over.apply(n,[e])):(s=a,r=o,n.hoverIntent_t=setTimeout(function(){l(e,n)},i.interval),void 0)},c=function(t,e){return e.hoverIntent_t=clearTimeout(e.hoverIntent_t),e.hoverIntent_s=0,i.out.apply(e,[t])},d=function(e){var n=jQuery.extend({},e),a=this;a.hoverIntent_t&&(a.hoverIntent_t=clearTimeout(a.hoverIntent_t)),"mouseenter"==e.type?(s=n.pageX,r=n.pageY,t(a).bind("mousemove",u),1!=a.hoverIntent_s&&(a.hoverIntent_t=setTimeout(function(){l(n,a)},i.interval))):(t(a).unbind("mousemove",u),1==a.hoverIntent_s&&(a.hoverIntent_t=setTimeout(function(){c(n,a)},i.timeout)))};return this.bind("mouseenter",d).bind("mouseleave",d)}}(jQuery),function(t){function e(){var e=myProNav.proNavPosition;t(this).find(".sub").css("display","block");var n=0;if(t(this).find(".row").each(function(){t(this).calcSubWidth(),rowWidth>n&&(n=rowWidth)}),t(this).find(".sub").css({width:n}),"left"==e){var i=t(this).parent().parent().outerWidth();t(this).find(".sub").css({left:i,top:"0px"})}"right"==e&&t(this).find(".sub").css({left:-rowWidth,top:"0px"}),t(this).find(".sub").stop().animate({opacity:1},{duration:myProNav.fadeInTime,easing:myProNav.easingMethodShow})}function n(){t(this).find(".sub").stop().animate({opacity:0},{duration:myProNav.fadeOutTime,easing:myProNav.easingMethodHide,complete:function(){t(this).css("display","none")}})}function i(){var e=t(window).width();"block"==t("#pronav-selection-container").css("display")?t("#pronav-selection-container").width(e).addClass("responsive"):t("ul#pronav").css("height",t("ul#pronav > li.primary-pronav-item").outerHeight())}function a(){t("ul#pronav .sub").not(".non-responsive").each(function(e){t("<select id='pronav-select-"+e+"'></select>").appendTo("#pronav-selection");var n=t(this).prev().attr("href"),i=t(this).prev().text();t("<option />",{value:n,text:i}).appendTo("select#pronav-select-"+e),t(this).find(".row .top-level-ul > li a").each(function(){var n="",i="",a=t(this);a.parent().hasClass("level-2")&&(n="- "),a.parent().hasClass("level-3")&&(n="-- "),a.parent().hasClass("level-4")&&(n="--- "),i=a.find("img").attr("alt"),void 0==i&&(i=""),t("<option />",{value:a.attr("href"),text:n+a.text()+i}).appendTo("select#pronav-select-"+e)})}),t("#pronav-selection select").change(function(){window.location=t(this).find("option:selected").val()}),o(),t("#pronav-select-toggle").click(function(){t(this).next().toggle()})}function o(){var e=myProNav.currentURL,n=myProNav.homeURL;t("#pronav-selection select").each(function(){e!==n&&t(this).find('option[value="'+e+'"]').attr("selected","selected")})}function s(){t("ul#pronav .sub ul > li").has(".row").each(function(){t(this).addClass("has-children")}),t(".has-children").each(function(){var e=t(this).find("> a").html();t(this).find("> a").html(e)}),t(".has-children").hoverIntent(r,u)}function r(){t(this).find("> .child-sub").css("display","block").stop().animate({opacity:1},{duration:myProNav.fadeInTime,easing:myProNav.easingMethodShow}),t(this).find("> .child-sub").css("left",Math.ceil(rowWidth))}function u(){t(this).find("> .child-sub").stop().animate({opacity:0},{duration:myProNav.fadeOutTime,easing:myProNav.easingMethodHide,complete:function(){t(this).css("display","none")}})}t("ul#pronav").addClass(myProNav.bodyClass).css("width",myProNav.proNavWidth).css("height",t("ul#pronav > li.primary-pronav-item").outerHeight()),t("ul#pronav .row > ul").addClass("top-level-ul"),t.fn.calcSubWidth=function(){rowWidth=0,t(this).find(".columns-split").length?(t(this).find(".columns-inside").each(function(){rowWidth+=t(this).outerWidth()}),t(this).find("ul.top-level-ul").addClass("has-columns")):t(this).find("ul.top-level-ul").each(function(){rowWidth+=t(this).outerWidth()})},t("li.primary-pronav-item:first").addClass("first-pronav-item"),t("li.primary-pronav-item:last").addClass("last-pronav-item"),1==t("ul#pronav li.primary-pronav-item").length&&t("li.primary-pronav-item:first").removeClass("first-pronav-item"),t("#pronav .sub .row ul.columns-split").each(function(){for(var e=t(this).attr("class").split(" ")[0],n=e.replace("columns-",""),i=t(this).find("li").size(),a=Math.ceil(i/n),o=t(this).find("li"),s=0;i>s;s+=a)o.slice(s,s+a).wrapAll("<li class='columns-inside'><ul></ul></li>")}),t("ul#pronav .sub").each(function(){t(this).find(".row:odd").addClass("odd-row"),t(this).find(".row:even").addClass("even-row"),t(this).find(".row:first").addClass("first-row"),t(this).find(".row:last").addClass("last-row"),1==t(this).find(".row").length&&t(this).find(".row").removeClass("first-row")}),t("ul#pronav .row").each(function(){t(this).find("> ul:odd").addClass("odd-ul"),t(this).find("> ul:even").addClass("even-ul"),t(this).find("> ul:first").addClass("first-ul"),t(this).find("> ul:last").addClass("last-ul"),t(this).find("> ul:last").after("<div style='clear:both;/>"),1==t(this).find("> ul").length&&t(this).find("> ul").removeClass("first-ul")}),t("ul#pronav .row ul").each(function(){t(this).find("> li:odd").addClass("odd-li"),t(this).find("> li:even").addClass("even-li"),t(this).find("> li:first").addClass("first-li"),t(this).find("> li:last").addClass("last-li"),1==t(this).find("> li").length&&t(this).find("> li").removeClass("first-li")});var l={sensitivity:myProNav.sensitivity,interval:myProNav.interval,over:e,timeout:myProNav.timeout,out:n};t("ul#pronav li").has(".sub").hoverIntent(l),t("ul#pronav li.no-link a.primary-pronav-link").click(function(t){t.preventDefault()}),a(),i(),t(window).resize(function(){i()}),s()}(jQuery),function(t,e,n,i){function a(t,e){return t[e]===i?w[e]:t[e]}function o(){var t=e.pageYOffset;return t===i?y.scrollTop:t}function s(t,e){var n=w["on"+t];n&&(M(n)?n.call(e[0]):(n.addClass&&e.addClass(n.addClass),n.removeClass&&e.removeClass(n.removeClass))),e.trigger("lazy"+t,[e]),c()}function r(e){s(e.type,t(this).off(p,r))}function u(n){if(P.length){n=n||w.forceLoad,Q=1/0;var i,a,u=o(),l=e.innerHeight||y.clientHeight,c=e.innerWidth||y.clientWidth;for(i=0,a=P.length;a>i;i++){var d,h=P[i],v=h[0],m=h[f],g=!1,I=n;if(O(y,v)){if(n||!m.visibleOnly||v.offsetWidth||v.offsetHeight){if(!I){var C=v.getBoundingClientRect(),b=m.edgeX,A=m.edgeY;d=C.top+u-A-l,I=u>=d&&C.bottom>-A&&C.left<=c+b&&C.right>-b}if(I){s("show",h);var T=m.srcAttr,N=M(T)?T(h):v.getAttribute(T);N&&(h.on(p,r),v.src=N),g=!0}else Q>d&&(Q=d)}}else g=!0;g&&(P.splice(i--,1),a--)}a||s("complete",t(y))}}function l(){T>1?(T=1,u(),setTimeout(l,w.throttle)):T=0}function c(t){P.length&&(t&&"scroll"===t.type&&t.currentTarget===e&&Q>=o()||(T||setTimeout(l,0),T=2))}function d(){C.lazyLoadXT()}function h(){u(!0)}var f="lazyLoadXT",v="lazied",p="load error",m="lazy-hidden",y=n.documentElement||n.body,g=e.onscroll===i||!!e.operamini||!y.getBoundingClientRect,w={autoInit:!0,selector:"img[data-src]",blankImage:"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",throttle:99,forceLoad:g,loadEvent:"pageshow",updateEvent:"load orientationchange resize scroll touchmove focus",forceEvent:"",oninit:{removeClass:"lazy"},onshow:{addClass:m},onload:{removeClass:m,addClass:"lazy-loaded"},onerror:{removeClass:m},checkDuplicates:!0},I={srcAttr:"data-src",edgeX:0,edgeY:0,visibleOnly:!0},C=t(e),M=t.isFunction,b=t.extend,A=t.data||function(e,n){return t(e).data(n)},O=t.contains||function(t,e){for(;e=e.parentNode;)if(e===t)return!0;return!1},P=[],Q=0,T=0;t[f]=b(w,I,t[f]),t.fn[f]=function(n){n=n||{};var i,o=a(n,"blankImage"),r=a(n,"checkDuplicates"),u=a(n,"scrollContainer"),l={};t(u).on("scroll",c);for(i in I)l[i]=a(n,i);return this.each(function(i,a){if(a===e)t(w.selector).lazyLoadXT(n);else{if(r&&A(a,v))return;var u=t(a).data(v,1);o&&"IMG"===a.tagName&&!a.src&&(a.src=o),u[f]=b({},l),s("init",u),P.push(u)}})},t(n).ready(function(){s("start",C),C.on(w.loadEvent,d).on(w.updateEvent,c).on(w.forceEvent,h),t(n).on(w.updateEvent,c),w.autoInit&&d()})}(window.jQuery||window.Zepto||window.$,window,document),function(t){var e=t.lazyLoadXT,n=e.widgetAttr||"data-lazy-widget",i=/<!--([\s\S]*)-->/;e.selector+=",["+n+"]",t(document).on("lazyshow","["+n+"]",function(){var e,a=t(this),o=a.attr(n);o&&(a=t("#"+o)),a.length&&(e=i.exec(a.html()),e&&a.replaceWith(t.trim(e[1])))})}(window.jQuery||window.Zepto||window.$);
+            var vitality_jquery_easing_interval = setInterval(function () {
+                console.info('vitality_jquery_easing_interval running');
+                if(typeof jQuery === 'undefined'){
+                    return;
+                }
+                clearInterval(vitality_jquery_easing_interval);
+                console.info('vitality_jquery_easing_interval stopped');
+                    jQuery.easing.jswing=jQuery.easing.swing,jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(t,e,n,i,a){return jQuery.easing[jQuery.easing.def](t,e,n,i,a)},easeInQuad:function(t,e,n,i,a){return i*(e/=a)*e+n},easeOutQuad:function(t,e,n,i,a){return-i*(e/=a)*(e-2)+n},easeInOutQuad:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e+n:-i/2*(--e*(e-2)-1)+n},easeInCubic:function(t,e,n,i,a){return i*(e/=a)*e*e+n},easeOutCubic:function(t,e,n,i,a){return i*((e=e/a-1)*e*e+1)+n},easeInOutCubic:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e*e+n:i/2*((e-=2)*e*e+2)+n},easeInQuart:function(t,e,n,i,a){return i*(e/=a)*e*e*e+n},easeOutQuart:function(t,e,n,i,a){return-i*((e=e/a-1)*e*e*e-1)+n},easeInOutQuart:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e*e*e+n:-i/2*((e-=2)*e*e*e-2)+n},easeInQuint:function(t,e,n,i,a){return i*(e/=a)*e*e*e*e+n},easeOutQuint:function(t,e,n,i,a){return i*((e=e/a-1)*e*e*e*e+1)+n},easeInOutQuint:function(t,e,n,i,a){return(e/=a/2)<1?i/2*e*e*e*e*e+n:i/2*((e-=2)*e*e*e*e+2)+n},easeInSine:function(t,e,n,i,a){return-i*Math.cos(e/a*(Math.PI/2))+i+n},easeOutSine:function(t,e,n,i,a){return i*Math.sin(e/a*(Math.PI/2))+n},easeInOutSine:function(t,e,n,i,a){return-i/2*(Math.cos(Math.PI*e/a)-1)+n},easeInExpo:function(t,e,n,i,a){return 0==e?n:i*Math.pow(2,10*(e/a-1))+n},easeOutExpo:function(t,e,n,i,a){return e==a?n+i:i*(-Math.pow(2,-10*e/a)+1)+n},easeInOutExpo:function(t,e,n,i,a){return 0==e?n:e==a?n+i:(e/=a/2)<1?i/2*Math.pow(2,10*(e-1))+n:i/2*(-Math.pow(2,-10*--e)+2)+n},easeInCirc:function(t,e,n,i,a){return-i*(Math.sqrt(1-(e/=a)*e)-1)+n},easeOutCirc:function(t,e,n,i,a){return i*Math.sqrt(1-(e=e/a-1)*e)+n},easeInOutCirc:function(t,e,n,i,a){return(e/=a/2)<1?-i/2*(Math.sqrt(1-e*e)-1)+n:i/2*(Math.sqrt(1-(e-=2)*e)+1)+n},easeInElastic:function(t,e,n,i,a){var o=1.70158,s=0,r=i;if(0==e)return n;if(1==(e/=a))return n+i;if(s||(s=.3*a),r<Math.abs(i)){r=i;var o=s/4}else var o=s/(2*Math.PI)*Math.asin(i/r);return-(r*Math.pow(2,10*(e-=1))*Math.sin((e*a-o)*(2*Math.PI)/s))+n},easeOutElastic:function(t,e,n,i,a){var o=1.70158,s=0,r=i;if(0==e)return n;if(1==(e/=a))return n+i;if(s||(s=.3*a),r<Math.abs(i)){r=i;var o=s/4}else var o=s/(2*Math.PI)*Math.asin(i/r);return r*Math.pow(2,-10*e)*Math.sin((e*a-o)*(2*Math.PI)/s)+i+n},easeInOutElastic:function(t,e,n,i,a){var o=1.70158,s=0,r=i;if(0==e)return n;if(2==(e/=a/2))return n+i;if(s||(s=a*(.3*1.5)),r<Math.abs(i)){r=i;var o=s/4}else var o=s/(2*Math.PI)*Math.asin(i/r);return 1>e?-.5*(r*Math.pow(2,10*(e-=1))*Math.sin((e*a-o)*(2*Math.PI)/s))+n:r*Math.pow(2,-10*(e-=1))*Math.sin((e*a-o)*(2*Math.PI)/s)*.5+i+n},easeInBack:function(t,e,n,i,a,o){return void 0==o&&(o=1.70158),i*(e/=a)*e*((o+1)*e-o)+n},easeOutBack:function(t,e,n,i,a,o){return void 0==o&&(o=1.70158),i*((e=e/a-1)*e*((o+1)*e+o)+1)+n},easeInOutBack:function(t,e,n,i,a,o){return void 0==o&&(o=1.70158),(e/=a/2)<1?i/2*(e*e*(((o*=1.525)+1)*e-o))+n:i/2*((e-=2)*e*(((o*=1.525)+1)*e+o)+2)+n},easeInBounce:function(t,e,n,i,a){return i-jQuery.easing.easeOutBounce(t,a-e,0,i,a)+n},easeOutBounce:function(t,e,n,i,a){return(e/=a)<1/2.75?i*(7.5625*e*e)+n:2/2.75>e?i*(7.5625*(e-=1.5/2.75)*e+.75)+n:2.5/2.75>e?i*(7.5625*(e-=2.25/2.75)*e+.9375)+n:i*(7.5625*(e-=2.625/2.75)*e+.984375)+n},easeInOutBounce:function(t,e,n,i,a){return a/2>e?.5*jQuery.easing.easeInBounce(t,2*e,0,i,a)+n:.5*jQuery.easing.easeOutBounce(t,2*e-a,0,i,a)+.5*i+n}}),function(t){t.fn.hoverIntent=function(e,n){var i={sensitivity:7,interval:100,timeout:0};i=t.extend(i,n?{over:e,out:n}:e);var a,o,s,r,u=function(t){a=t.pageX,o=t.pageY},l=function(e,n){return n.hoverIntent_t=clearTimeout(n.hoverIntent_t),Math.abs(s-a)+Math.abs(r-o)<i.sensitivity?(t(n).unbind("mousemove",u),n.hoverIntent_s=1,i.over.apply(n,[e])):(s=a,r=o,n.hoverIntent_t=setTimeout(function(){l(e,n)},i.interval),void 0)},c=function(t,e){return e.hoverIntent_t=clearTimeout(e.hoverIntent_t),e.hoverIntent_s=0,i.out.apply(e,[t])},d=function(e){var n=jQuery.extend({},e),a=this;a.hoverIntent_t&&(a.hoverIntent_t=clearTimeout(a.hoverIntent_t)),"mouseenter"==e.type?(s=n.pageX,r=n.pageY,t(a).bind("mousemove",u),1!=a.hoverIntent_s&&(a.hoverIntent_t=setTimeout(function(){l(n,a)},i.interval))):(t(a).unbind("mousemove",u),1==a.hoverIntent_s&&(a.hoverIntent_t=setTimeout(function(){c(n,a)},i.timeout)))};return this.bind("mouseenter",d).bind("mouseleave",d)}}(jQuery),function(t){function e(){var e=myProNav.proNavPosition;t(this).find(".sub").css("display","block");var n=0;if(t(this).find(".row").each(function(){t(this).calcSubWidth(),rowWidth>n&&(n=rowWidth)}),t(this).find(".sub").css({width:n}),"left"==e){var i=t(this).parent().parent().outerWidth();t(this).find(".sub").css({left:i,top:"0px"})}"right"==e&&t(this).find(".sub").css({left:-rowWidth,top:"0px"}),t(this).find(".sub").stop().animate({opacity:1},{duration:myProNav.fadeInTime,easing:myProNav.easingMethodShow})}function n(){t(this).find(".sub").stop().animate({opacity:0},{duration:myProNav.fadeOutTime,easing:myProNav.easingMethodHide,complete:function(){t(this).css("display","none")}})}function i(){var e=t(window).width();"block"==t("#pronav-selection-container").css("display")?t("#pronav-selection-container").width(e).addClass("responsive"):t("ul#pronav").css("height",t("ul#pronav > li.primary-pronav-item").outerHeight())}function a(){t("ul#pronav .sub").not(".non-responsive").each(function(e){t("<select id='pronav-select-"+e+"'></select>").appendTo("#pronav-selection");var n=t(this).prev().attr("href"),i=t(this).prev().text();t("<option />",{value:n,text:i}).appendTo("select#pronav-select-"+e),t(this).find(".row .top-level-ul > li a").each(function(){var n="",i="",a=t(this);a.parent().hasClass("level-2")&&(n="- "),a.parent().hasClass("level-3")&&(n="-- "),a.parent().hasClass("level-4")&&(n="--- "),i=a.find("img").attr("alt"),void 0==i&&(i=""),t("<option />",{value:a.attr("href"),text:n+a.text()+i}).appendTo("select#pronav-select-"+e)})}),t("#pronav-selection select").change(function(){window.location=t(this).find("option:selected").val()}),o(),t("#pronav-select-toggle").click(function(){t(this).next().toggle()})}function o(){var e=myProNav.currentURL,n=myProNav.homeURL;t("#pronav-selection select").each(function(){e!==n&&t(this).find('option[value="'+e+'"]').attr("selected","selected")})}function s(){t("ul#pronav .sub ul > li").has(".row").each(function(){t(this).addClass("has-children")}),t(".has-children").each(function(){var e=t(this).find("> a").html();t(this).find("> a").html(e)}),t(".has-children").hoverIntent(r,u)}function r(){t(this).find("> .child-sub").css("display","block").stop().animate({opacity:1},{duration:myProNav.fadeInTime,easing:myProNav.easingMethodShow}),t(this).find("> .child-sub").css("left",Math.ceil(rowWidth))}function u(){t(this).find("> .child-sub").stop().animate({opacity:0},{duration:myProNav.fadeOutTime,easing:myProNav.easingMethodHide,complete:function(){t(this).css("display","none")}})}t("ul#pronav").addClass(myProNav.bodyClass).css("width",myProNav.proNavWidth).css("height",t("ul#pronav > li.primary-pronav-item").outerHeight()),t("ul#pronav .row > ul").addClass("top-level-ul"),t.fn.calcSubWidth=function(){rowWidth=0,t(this).find(".columns-split").length?(t(this).find(".columns-inside").each(function(){rowWidth+=t(this).outerWidth()}),t(this).find("ul.top-level-ul").addClass("has-columns")):t(this).find("ul.top-level-ul").each(function(){rowWidth+=t(this).outerWidth()})},t("li.primary-pronav-item:first").addClass("first-pronav-item"),t("li.primary-pronav-item:last").addClass("last-pronav-item"),1==t("ul#pronav li.primary-pronav-item").length&&t("li.primary-pronav-item:first").removeClass("first-pronav-item"),t("#pronav .sub .row ul.columns-split").each(function(){for(var e=t(this).attr("class").split(" ")[0],n=e.replace("columns-",""),i=t(this).find("li").size(),a=Math.ceil(i/n),o=t(this).find("li"),s=0;i>s;s+=a)o.slice(s,s+a).wrapAll("<li class='columns-inside'><ul></ul></li>")}),t("ul#pronav .sub").each(function(){t(this).find(".row:odd").addClass("odd-row"),t(this).find(".row:even").addClass("even-row"),t(this).find(".row:first").addClass("first-row"),t(this).find(".row:last").addClass("last-row"),1==t(this).find(".row").length&&t(this).find(".row").removeClass("first-row")}),t("ul#pronav .row").each(function(){t(this).find("> ul:odd").addClass("odd-ul"),t(this).find("> ul:even").addClass("even-ul"),t(this).find("> ul:first").addClass("first-ul"),t(this).find("> ul:last").addClass("last-ul"),t(this).find("> ul:last").after("<div style='clear:both;/>"),1==t(this).find("> ul").length&&t(this).find("> ul").removeClass("first-ul")}),t("ul#pronav .row ul").each(function(){t(this).find("> li:odd").addClass("odd-li"),t(this).find("> li:even").addClass("even-li"),t(this).find("> li:first").addClass("first-li"),t(this).find("> li:last").addClass("last-li"),1==t(this).find("> li").length&&t(this).find("> li").removeClass("first-li")});var l={sensitivity:myProNav.sensitivity,interval:myProNav.interval,over:e,timeout:myProNav.timeout,out:n};t("ul#pronav li").has(".sub").hoverIntent(l),t("ul#pronav li.no-link a.primary-pronav-link").click(function(t){t.preventDefault()}),a(),i(),t(window).resize(function(){i()}),s()}(jQuery),function(t,e,n,i){function a(t,e){return t[e]===i?w[e]:t[e]}function o(){var t=e.pageYOffset;return t===i?y.scrollTop:t}function s(t,e){var n=w["on"+t];n&&(M(n)?n.call(e[0]):(n.addClass&&e.addClass(n.addClass),n.removeClass&&e.removeClass(n.removeClass))),e.trigger("lazy"+t,[e]),c()}function r(e){s(e.type,t(this).off(p,r))}function u(n){if(P.length){n=n||w.forceLoad,Q=1/0;var i,a,u=o(),l=e.innerHeight||y.clientHeight,c=e.innerWidth||y.clientWidth;for(i=0,a=P.length;a>i;i++){var d,h=P[i],v=h[0],m=h[f],g=!1,I=n;if(O(y,v)){if(n||!m.visibleOnly||v.offsetWidth||v.offsetHeight){if(!I){var C=v.getBoundingClientRect(),b=m.edgeX,A=m.edgeY;d=C.top+u-A-l,I=u>=d&&C.bottom>-A&&C.left<=c+b&&C.right>-b}if(I){s("show",h);var T=m.srcAttr,N=M(T)?T(h):v.getAttribute(T);N&&(h.on(p,r),v.src=N),g=!0}else Q>d&&(Q=d)}}else g=!0;g&&(P.splice(i--,1),a--)}a||s("complete",t(y))}}function l(){T>1?(T=1,u(),setTimeout(l,w.throttle)):T=0}function c(t){P.length&&(t&&"scroll"===t.type&&t.currentTarget===e&&Q>=o()||(T||setTimeout(l,0),T=2))}function d(){C.lazyLoadXT()}function h(){u(!0)}var f="lazyLoadXT",v="lazied",p="load error",m="lazy-hidden",y=n.documentElement||n.body,g=e.onscroll===i||!!e.operamini||!y.getBoundingClientRect,w={autoInit:!0,selector:"img[data-src]",blankImage:"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",throttle:99,forceLoad:g,loadEvent:"pageshow",updateEvent:"load orientationchange resize scroll touchmove focus",forceEvent:"",oninit:{removeClass:"lazy"},onshow:{addClass:m},onload:{removeClass:m,addClass:"lazy-loaded"},onerror:{removeClass:m},checkDuplicates:!0},I={srcAttr:"data-src",edgeX:0,edgeY:0,visibleOnly:!0},C=t(e),M=t.isFunction,b=t.extend,A=t.data||function(e,n){return t(e).data(n)},O=t.contains||function(t,e){for(;e=e.parentNode;)if(e===t)return!0;return!1},P=[],Q=0,T=0;t[f]=b(w,I,t[f]),t.fn[f]=function(n){n=n||{};var i,o=a(n,"blankImage"),r=a(n,"checkDuplicates"),u=a(n,"scrollContainer"),l={};t(u).on("scroll",c);for(i in I)l[i]=a(n,i);return this.each(function(i,a){if(a===e)t(w.selector).lazyLoadXT(n);else{if(r&&A(a,v))return;var u=t(a).data(v,1);o&&"IMG"===a.tagName&&!a.src&&(a.src=o),u[f]=b({},l),s("init",u),P.push(u)}})},t(n).ready(function(){s("start",C),C.on(w.loadEvent,d).on(w.updateEvent,c).on(w.forceEvent,h),t(n).on(w.updateEvent,c),w.autoInit&&d()})}(window.jQuery||window.Zepto||window.$,window,document),function(t){var e=t.lazyLoadXT,n=e.widgetAttr||"data-lazy-widget",i=/<!--([\s\S]*)-->/;e.selector+=",["+n+"]",t(document).on("lazyshow","["+n+"]",function(){var e,a=t(this),o=a.attr(n);o&&(a=t("#"+o)),a.length&&(e=i.exec(a.html()),e&&a.replaceWith(t.trim(e[1])))})}(window.jQuery||window.Zepto||window.$);
+            }, 1000)
 //]]>
             </script> <div class="magestore-bannerslider">
             <div class="magestore-bannerslider-standard">
-            <script src="https://www.vitalitymedical.com/js/magestore/bannerslider/jquery.flexslider.js"></script>
+            <script data-flexlider-src="https://www.vitalitymedical.com/js/magestore/bannerslider/jquery.flexslider.js" data-delay="2000"></script>
             <link rel="stylesheet" type="text/css" href="https://www.vitalitymedical.com/skin/frontend/base/default/css/magestore/bannerslider/flexslider.css" media="all" />
             <script type="text/javascript">
-            var j7 = jQuery.noConflict();
-            j7(document).ready(function($) {
-                    j7('.flexslider-7-8').flexslider({
-                        animation: "slide",
-                        slideshowSpeed: 5000            //minItems: 2,
-                        //maxItems: 4
-                    });
-                });
+            var vitality_j7_interval = setInterval(function(){
+                console.log('vitality_j7_interval running');
+                var jQueryLoaded = typeof jQuery !== 'undefined';
+
+                if(!(jQueryLoaded)){
+                return;
+                }
+                //Wait until jQuery is loaded to bind flexlider script
+                var flexsliderScript =  document.querySelector('script[data-flexlider-src]');
+                var flexliderSrc = flexsliderScript.getAttribute('data-flexlider-src');
+                flexsliderScript.setAttribute('src', flexliderSrc);
+
+                var flexSliderBound = typeof jQuery.flexslider !== 'undefined';
+
+                if(!flexSliderBound){
+                    return;
+            }
+                var j7 = jQuery.noConflict();
+                // console.log('j7 is: ', j7);
+            //     if(typeof j7.flexslider === 'undefined'){
+            //         return;
+            // }
+                clearInterval(vitality_j7_interval);
+                console.log('vitality_j7_interval stopped');
+
+                j7(document).ready(function($) {
+                j7('.flexslider-7-8').flexslider({
+                animation: "slide",
+                slideshowSpeed: 5000            //minItems: 2,
+                //maxItems: 4
+            });
+            });
+            }, 1000)
         </script>
             <div class="flexslider flexslider-7-8 inflow-speed-test-slider">
                 <ul class="slides">
@@ -1790,7 +1839,15 @@ text-align:center; padding-top:8px;">@Recommendation.Meta5</a>
             </form>
             <script type="text/javascript">
                 //<![CDATA[
-                var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                var vitality_varien_form_interval = setInterval(function () {
+                    console.log('vitality_varien_form_interval running');
+                    if(typeof VarienForm === 'undefined'){
+                        return;
+                    }
+                    console.log('vitality_varien_form_interval stopped');
+                    clearInterval(vitality_varien_form_interval);
+                    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                }, 1000)
                 //]]>
             </script>
         </div>
@@ -1937,15 +1994,30 @@ text-align:center; padding-top:8px;">@Recommendation.Meta5</a>
     (function () {
         // Remove Magento event observers from the search box
         // default magetno layout landing page
-        for( i = 0, len = allInputs.length; i < len; i++ ){
-            if( allInputs[i].type === "text" || allInputs[i].type === "search" ){
-                if( allInputs[i].name === "q" ||  allInputs[i].id === "search" ){
-                    var search_input = allInputs[i];
-                    search_input.stopObserving('click');
-                    search_input.stopObserving('keydown');
+        var tries = 0;
+        var vitality_search_input_observer_interval = setInterval(function () {
+            console.log('vitality_search_input_observer_interval running');
+            tries ++;
+            if(tries >= 5){
+                clearInterval(vitality_search_input_observer_interval);
+                console.log('vitality_search_input_observer_interval stopped. Unable to run script on this domain.');
+                return;
+            }
+            if(!search_input || typeof search_input.stopObserving === 'undefined'){
+                return;
+            }
+            clearInterval(vitality_search_input_observer_interval);
+            console.log('vitality_search_input_observer_interval stopped');
+            for( i = 0, len = allInputs.length; i < len; i++ ){
+                if( allInputs[i].type === "text" || allInputs[i].type === "search" ){
+                    if( allInputs[i].name === "q" ||  allInputs[i].id === "search" ){
+                        var search_input = allInputs[i];
+                        search_input.stopObserving('click');
+                        search_input.stopObserving('keydown');
+                    }
                 }
             }
-        }
+        }, 1000);
     })();
     var klevu_storeLandingPageUrl = 'https://www.vitalitymedical.com/catalogsearch/result/';
     var klevu_showQuickSearchOnEnter=false;
@@ -2011,7 +2083,7 @@ text-align:center; padding-top:8px;">@Recommendation.Meta5</a>
     (function() {
         var referrer, search_term, klevu_search_product_tracking;
         referrer = document.referrer;
-        search_term = referrer.toQueryParams().q;
+        search_term = referrer.toQueryParams ? referrer.toQueryParams().q : null;
         if (referrer.indexOf('content/index') > -1 && search_term) {
             klevu_search_product_tracking = {"klevu_apiKey":"klevu-15374044292418561","klevu_term":"","klevu_type":"clicked","klevu_productId":"1","klevu_productName":"Medical Supplies Online | Home Medical Equipment | Health Care Products","klevu_productUrl":"","Klevu_typeOfRecord":"KLEVU_CMS"};
             klevu_search_product_tracking.klevu_term = search_term;
