@@ -20890,4 +20890,60 @@ a#all-brands:hover {
   background-color: #2e8ab8 !important;
   text-decoration: none !important;
 }
-/*# sourceMappingURL=styles.css.map*/
+
+@-webkit-keyframes spinAround {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes spinAround {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.flexslider-7-8 {
+  background: #7d8286 !important;
+  outline: 10px solid gold;
+  height: 100%;
+  position: relative;
+}
+.flexslider-7-8 > div.flex-viewport {
+  z-index: 2;
+}
+.flexslider-7-8:after {
+  content: "";
+  left: calc(50% - (3.6rem / 2));
+  top: calc(50% - (3.6rem / 2));
+  position: absolute !important;
+  -webkit-animation: spinAround 0.5s infinite linear;
+          animation: spinAround 0.5s infinite linear;
+  border: 2px solid #dbdbdb;
+  border-top-color: #dbdbdb;
+  border-right-color: #dbdbdb;
+  border-radius: 9999px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  display: block;
+  height: 7.2rem;
+  position: relative;
+  width: 7.2rem;
+  z-index: 1;
+}
+.flexslider-7-8 .slides > li {
+  background: #7d8286;
+  outline: 1px solid green;
+  height: 100%;
+  z-index: 2;
+  color: transparent;
+}
+.flexslider-7-8 .slides > li a {
+  background: #7d8286;
+  outline: 1px solid green;
+  height: 100%;
+}
