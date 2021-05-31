@@ -26,7 +26,7 @@
 <![endif]-->
 <!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/aff159ea36b5efdf.css" media="all" />-->
     <link type="text/css" rel="stylesheet" href="./assets/styles.css" media="all" />
-    <script type="text/javascript" src="https://www.vitalitymedical.com/skin/extendware/ewminify/4a3b247c84a96aaf.js"></script><link rel="canonical" href="https://www.vitalitymedical.com" /><!--[if  (lte IE 8) & (!IEMobile)]>
+    <script type="text/javascript" data-deferred-script-src="https://www.vitalitymedical.com/skin/extendware/ewminify/4a3b247c84a96aaf.js" data-script-delay="1000"></script><link rel="canonical" href="https://www.vitalitymedical.com" /><!--[if  (lte IE 8) & (!IEMobile)]>
     <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/b8675e874b357c20.css" media="all"/><![endif]-->
     <!--[if (gte IE 9) | (IEMobile)]><!-->
 <!--    <link type="text/css" rel="stylesheet" href="https://www.vitalitymedical.com/skin/extendware/ewminify/d1324550cf707261.css" media="all" />-->
@@ -109,6 +109,17 @@
             setTimeout(function () {
                 updateSliderImageSourcesOnDesktop();
             }, 450);
+        })
+    </script>
+    <script>
+        // Delay load of render blocking scripts
+        var deferredScripts = document.querySelectorAll('[data-deferred-script-src]');
+        deferredScripts.forEach(function (script) {
+            var src = script.getAttribute('data-deferred-script-src');
+            var delay = Number(script.getAttribute('data-script-delay') || 1000); //The delay needs to be tested by trial and error and be set per script tag
+            setTimeout(function () {
+                script.setAttribute('src', src);
+            }, delay);
         })
     </script>
     <style>
