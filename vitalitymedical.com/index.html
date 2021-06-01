@@ -88,7 +88,7 @@
     <script type="text/javascript">
         (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/RLMZtOVbQxu02z6684mQXvPEJiJEKA1z0FsGEZ3Z/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
     </script>
-    <script data-deferred-script-src="https://cdn.noibu.com/collect.js" data-script-delay="1000"></script>
+    <script data-deferred-script-src="https://cdn.noibu.com/collect.js" data-script-delay="3000"></script>
     <script type="text/javascript">//<![CDATA[
     var vitality_translator_interval = setInterval(function () {
         console.info('vitality_translator_interval running');
@@ -99,7 +99,17 @@
         console.info('vitality_translator_interval stopped');
         var Translator = new Translate([]);
     }, 1000);
-    //]]></script><script>(function(d){var e=d.createElement('script');e.src='https://td.yieldify.com/yieldify/code.js?w_uuid=323f610a-850f-4164-91cc-12af042b0949&k=1&loca='+window.location.href;e.async=true;d.getElementsByTagName('head')[0].appendChild(e);}(document));</script><!--[if lt IE 9]>
+    //]]></script>
+    <script>
+    setTimeout(function () {
+        (function (d) {
+            var e = d.createElement('script');
+            e.src = 'https://td.yieldify.com/yieldify/code.js?w_uuid=323f610a-850f-4164-91cc-12af042b0949&k=1&loca=' + window.location.href;
+            e.async = true;
+            d.getElementsByTagName('head')[0].appendChild(e);
+        }(document));
+    }, 3000);
+    </script><!--[if lt IE 9]>
     <script>
         document.createElement('header');
         document.createElement('nav');
@@ -133,9 +143,9 @@
                     }
                 };
             })();
-        }, 1000);
+        }, 3000);
     </script>
-    <script data-deferred-script-src="https://cmp.osano.com/Azyw1US5VZrxA1vpb/7a78af1a-5dab-42ee-8b5b-fe3699ba8cc6/osano.js" data-script-delay="1000"></script>
+    <script data-deferred-script-src="https://cmp.osano.com/Azyw1US5VZrxA1vpb/7a78af1a-5dab-42ee-8b5b-fe3699ba8cc6/osano.js" data-script-delay="3000"></script>
 
     <script type="text/javascript">
         _atrk_opts = { atrk_acct:"mW0Yt1O7kI20L7", domain:"vitalitymedical.com",dynamic: true};
@@ -2102,13 +2112,18 @@ text-align:center; padding-top:8px;">@Recommendation.Meta5</a>
     });
 </script>
 <script type="text/javascript">
-    (function (d, s, id, url) {
-        var js, ljs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id; js.src = url; js.type = "text/javascript";
-        js.setAttribute('defer','');
-        ljs.parentNode.insertBefore(js, ljs);
-    })(document, 'script', 'ltkSDK', 'https://cdn.listrakbi.com/scripts/script.js?m=eLyYJzz3fJmI&v=1');
+    setTimeout(function () {
+        (function (d, s, id, url) {
+            var js, ljs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = url;
+            js.type = "text/javascript";
+            js.setAttribute('defer', '');
+            ljs.parentNode.insertBefore(js, ljs);
+        })(document, 'script', 'ltkSDK', 'https://cdn.listrakbi.com/scripts/script.js?m=eLyYJzz3fJmI&v=1');
+    }, 3000);
 </script>
 
 <script type="text/javascript">
