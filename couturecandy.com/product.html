@@ -13,7 +13,7 @@
 <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',4000,
+})(window,document.documentElement,'async-hide','dataLayer',12000,
 {'GTM-PQJPKCB':true});</script>
   <!-- Google Tag Manager -->
   <script>
@@ -24,7 +24,7 @@ setTimeout(function()
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PQJPKCB');
-}, 8000);
+}, 12000);
   </script>
   <!-- End Google Tag Manager --><meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -902,7 +902,7 @@ setTimeout(function()
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-}, 8000);
+}, 12000);
 </script>
 <link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">
 <script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 14470185017,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "product"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
@@ -1049,7 +1049,7 @@ setTimeout(function()
   trekkie.load(
     {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":14470185017,"isMerchantRequest":null,"themeId":82264752211,"themeCityHash":"9301440983894871052","contentLanguage":"en","currency":"USD"},"isServerSideCookieWritingEnabled":true,"expectS2SEventId":true,"expectS2SEventEmit":true,"bugsnagBetaEnabled":true},"Google Analytics":{"trackingId":"UA-81904-1","domain":"auto","siteSpeedSampleRate":"10","enhancedEcommerce":true,"doubleClick":true,"includeSearch":true},"Facebook Pixel":{"pixelIds":["311715418953318"],"agent":"plshopify1.2"},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer"}}
   );
-}, 8000);
+}, 12000);
 
   var loaded = false;
   trekkie.ready(function() {
@@ -4610,7 +4610,7 @@ setTimeout(function()
 window.addEventListener("load", rampt_delay_load, false);
 
 // in case that onload event doesn't trigger sooner, wait 4 seconds to execute rampt_delay_load
-setTimeout(rampt_delay_load, 4000);
+setTimeout(rampt_delay_load, 12000);
 
 function rampt_delay_load()
 {
@@ -4630,7 +4630,7 @@ function rampt_delay_load()
 		// checks if device is iPhone, iPod or android to delay the execution of rampt_delayed_scripts 4 seconds
 		if(/(Android|iPhone|iPod)/.test(navigator.userAgent))
 		{
-			setTimeout(rampt_delayed_scripts, 8000);
+			setTimeout(rampt_delayed_scripts, 12000);
 		}
 		else
 		{
