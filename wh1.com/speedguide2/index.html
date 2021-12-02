@@ -67,6 +67,62 @@
     ]
 }
 </script>
+
+<script>
+  window.addEventListener("load", rampt_delay_load, false);
+  
+  // in case that onload event doesn't trigger sooner, wait 4 seconds to execute rampt_delay_load
+  setTimeout(rampt_delay_load, 4000);
+  
+  function rampt_delay_load()
+  {
+    // window.rampt_delayed_resources_loaded flag checks if the function has been executed so that it doesn't apply changes twice
+    if(typeof(window.rampt_delayed_resources_loaded) == "undefined")
+    {
+      // search all <link> tags that have the data-rampt-href attribute and set the href attribute
+      var rampt_delayed_resources = document.querySelectorAll("link[data-rampt-href]");
+  
+      for(var rampt_delayed_resource_index = 0; rampt_delayed_resource_index < rampt_delayed_resources.length; rampt_delayed_resource_index++)
+      {
+        var rampt_delayed_resource = rampt_delayed_resources[rampt_delayed_resource_index];
+  
+        rampt_delayed_resource.href = rampt_delayed_resource.getAttribute("data-rampt-href");
+      }
+  
+      // checks if device is iPhone, iPod or android to delay the execution of rampt_delayed_scripts 4 seconds
+      if(/(Android|iPhone|iPod)/.test(navigator.userAgent))
+      {
+        setTimeout(rampt_delayed_scripts, 4000);
+      }
+      else
+      {
+        rampt_delayed_scripts();
+      }
+  
+      // sets window.rampt_delayed_resources_loaded flag to prevent that we apply changes again
+      window.rampt_delayed_resources_loaded = "yes";
+    }
+  }
+  function rampt_delayed_scripts()
+  {
+    // search all <link> and <script> tags that have the data-rampt-delay-href or data-rampt-delay-src attribute and set the href or src attributes
+    var rampt_delayed_resources = document.querySelectorAll("script[data-rampt-delay-src], link[data-rampt-delay-href]");
+  
+    for(var rampt_delayed_resource_index = 0; rampt_delayed_resource_index < rampt_delayed_resources.length; rampt_delayed_resource_index++)
+    {
+      var rampt_delayed_resource = rampt_delayed_resources[rampt_delayed_resource_index];
+  
+      if(rampt_delayed_resource.tagName.toLowerCase() == "script")
+      {
+        rampt_delayed_resource.src = rampt_delayed_resource.getAttribute("data-rampt-delay-src");
+      }
+      else
+      {
+        rampt_delayed_resource.href = rampt_delayed_resource.getAttribute("data-rampt-delay-href");
+      }
+    }
+  }
+  </script>
 <style>
 		.branding img {max-width:230px;}
     body:before {
@@ -1096,6 +1152,7 @@ which shelves to buy to match your existing system, to planning an entire new sp
 <link rel="stylesheet" href="https://wh1.com/assets/css/style-all.css">
 <script src="https://wh1.com/assets/js/build/site.min.js"></script>
 <script src="https://wh1.com/assets/js/lazysizes.min.js"></script>
+
 <script src="https://wh1.com/-/js/jquery.validate.min.js"></script>
 
 <!-- <script src="https://wh1.com/-/js/jquery.noncartinit.js"></script> -->
@@ -1159,69 +1216,4 @@ $(function(){var initthings=new Site_Functions();initthings.init();})
 		klevu_result_left_margin = '';
 		(function () { var ws = document.createElement('script'),kl_protocol =("https:"===document.location.protocol?"https://":"http://"); ws.type = 'text/javascript'; ws.async = true; ws.src = kl_protocol+'js.klevu.com/klevu-js-v1/js/klevu-webstore.js'; ws.charset="UTF-8"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ws, s); })();
 </script>
-<script src="./index_files/js.cookie.js"></script>
-
-
-
-
-<script>
-
-  
-	setup_rampt_imgs();
-
-// execute rampt_delay_load on window onload event
-window.addEventListener("load", rampt_delay_load, false);
-
-// in case that onload event doesn't trigger sooner, wait 4 seconds to execute rampt_delay_load
-setTimeout(rampt_delay_load, 4000);
-
-function rampt_delay_load()
-{
-	// window.rampt_delayed_resources_loaded flag checks if the function has been executed so that it doesn't apply changes twice
-	if(typeof(window.rampt_delayed_resources_loaded) == "undefined")
-	{
-		// search all <link> tags that have the data-rampt-href attribute and set the href attribute
-		var rampt_delayed_resources = document.querySelectorAll("link[data-rampt-href]");
-
-		for(var rampt_delayed_resource_index = 0; rampt_delayed_resource_index < rampt_delayed_resources.length; rampt_delayed_resource_index++)
-		{
-			var rampt_delayed_resource = rampt_delayed_resources[rampt_delayed_resource_index];
-
-			rampt_delayed_resource.href = rampt_delayed_resource.getAttribute("data-rampt-href");
-		}
-
-		// checks if device is iPhone, iPod or android to delay the execution of rampt_delayed_scripts 4 seconds
-		if(/(Android|iPhone|iPod)/.test(navigator.userAgent))
-		{
-			setTimeout(rampt_delayed_scripts, 4000);
-		}
-		else
-		{
-			rampt_delayed_scripts();
-		}
-		// sets window.rampt_delayed_resources_loaded flag to prevent that we apply changes again
-		window.rampt_delayed_resources_loaded = "yes";
-	}
-}
-function rampt_delayed_scripts()
-{
-	// search all <link> and <script> tags that have the data-rampt-delay-href or data-rampt-delay-src attribute and set the href or src attributes
-	var rampt_delayed_resources = document.querySelectorAll("script[data-rampt-delay-src], link[data-rampt-delay-href]");
-
-	for(var rampt_delayed_resource_index = 0; rampt_delayed_resource_index < rampt_delayed_resources.length; rampt_delayed_resource_index++)
-	{
-		var rampt_delayed_resource = rampt_delayed_resources[rampt_delayed_resource_index];
-
-		if(rampt_delayed_resource.tagName.toLowerCase() == "script")
-		{
-			rampt_delayed_resource.src = rampt_delayed_resource.getAttribute("data-rampt-delay-src");
-		}
-		else
-		{
-			rampt_delayed_resource.href = rampt_delayed_resource.getAttribute("data-rampt-delay-href");
-		}
-	}
-}
-</script>
-
 </div></div><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./index_files/box-25a418976ea02a6f393fbbe77cec94bb.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><iframe id="lo-cs-frame" src="./index_files/saved_resource(3).html" aria-hidden="true" title="Lucky Orange" style="display: none !important;"></iframe><div class="klevu-fluid" role="region" aria-label="Klevu Search Container"><div class="klevu-searching-area-l2" id="loaderContainer" style="display:none;"><div class="klevuLoader" id="klevuLoader" style="display: none; text-align: center;"><img src="./index_files/klevu-loader.GIF" alt="Loading..."></div></div><div class="klevu-arrow" id="klevuArrow" style="display: none !important;"></div><div class="klevu-searching-area-l2" id="klevuSearchingArea" style="display: none !important;" tabindex="-1"><div class="klevuNoResults klevuNoResults-new" id="klevuSearchNoResults" style="display:none;"></div><div class="klevuSuggestionsBlock" id="klevuSuggestionsBlock"><div class="klevuAutoSuggestion-l2" id="klevuAutoCompleteArea" style="display:none;"></div><div class="klevuAutoSuggestion-l2" id="klevuCmsContentArea" style="display:none;"></div><div class="klevuSuggestionHeading" style="display:none;"><span class="klevuHeadingText">Pages</span></div><div class="klevuAutoSuggestion-l2" id="klevuCategoryArea" style="display:none;"></div></div><div class="klevuResultsBlock" id="klevuResultsBlock"><div class="klevuSuggestionHeading" id="klevuProductHeading" style="display:none;"></div><div class="klevuSearchResults-l2" id="productsList" style="display:none;"></div></div></div><div onkeydown="klevu_commons.setupNextTabForLastChild();" tabindex="0"></div></div><div class="klevu-fluid" role="region" aria-label="Klevu Personalisation Container"><div class="klevu-pt-rs-hover" id="klevu-pt-rs-hover" tabindex="-1" style="display: none;"><div class="klevu-pt-hover-box" id="klevu-pt-hover-box" style="display: block;"><strong>Popular Searches</strong> <div class="klevu-pt-rs-keywords"><a href="https://wh1.com/search/?keywords=Lozier" target="_self">Lozier</a><a href="https://wh1.com/search/?keywords=dock%20plate" target="_self">dock plate</a></div><div class="klevu-clear-both"></div></div></div><div onkeydown="klevu_commons.setupNextTabForLastChild();" tabindex="0"></div></div><div id="LoAvailableBtn" style="padding: 10px; height: auto; position: fixed; bottom: 0px; right: 20px; z-index: 9999; background-color: rgba(255, 255, 255, 0.97); color: rgb(0, 0, 0); direction: ltr; font-weight: bold; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 140%; box-shadow: rgb(0, 0, 0) 0px 0px 5px; border-top: 2px solid rgb(255, 255, 255); border-right: 2px solid rgb(255, 255, 255); border-left: 2px solid rgb(255, 255, 255); border-image: initial; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom: none; cursor: pointer; display: block; margin-bottom: 0px; opacity: 1;">Chat With Us!&nbsp; <img id="lo_green_blinker" width="16" height="16" style="width: 16px; height: 16px; border: none; padding: 0px; margin: 0px 0px 0px 3px; opacity: 1;" src="./index_files/blink_green.png" align="right" alt=""></div><div id="LoChatMinimizedButton" style="padding:10px; height:auto; position:fixed;bottom:0px; right:20px;  z-index:9999; background-color: rgba(255,255,255,0.97); color: #000000; direction: ltr; font-weight:bold; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:140%;;  -box-shadow: 0px 0px 5px #000; box-shadow: 0px 0px 5px #000; -webkit-box-shadow: 0px 0px 5px #000; border:2px solid #fff;  border-bottom:none; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom:none; ;cursor: pointer; ;max-width: 250; display: none;;margin-bottom:0px">Chatting<div class="lo-badge" style="display: none; background-color: red; border-radius: 50%; box-shadow: black 0px 0px 5px; color: white; height: 25px; line-height: 25px; position: absolute; text-align: center; width: 25px; right: 57px; bottom: 23px;">0</div></div><div id="lo_chat_box" style="transition: cubic-bezier(0, 1, 0.5, 1) .35s; border:2px solid white; width:350px; max-width:350px; border-bottom:none; display:none; bottom:-1000px; opacity:0;  position:fixed; bottom:-1000px; ; margin-bottom: 0px ;right:20px;  z-index:999999;   background-color: #ffffff; background-color: rgba(255,255,255,0.97); color: #000000; direction: ltr; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:130%; color: #000000; -box-shadow: 0px 0px 5px rgba(0,0,0,0.5); box-shadow: 0px 0px 5px  rgba(0,0,0,0.5); -webkit-box-shadow: 0px 0px 5px  rgba(0,0,0,0.5);;-webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; "><div onclick="LO.min_chat();" tabindex="0" id="lo_chat_top" style="color:#000000; background-color: #DADADA; background-color: rgba(234,234,234,0.97); cursor:pointer; font-weight:bold; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height:13px; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px; "><div style="float:right; margin-top:10px; margin-right:10px; position:absolute; right:0;" id="lo_chat_min_box"><div style="cursor: pointer; float:right; margin-left:10px; opacity:0.6; font-size:1empx; font-weight:bold;" onclick="LO.end_chat();" tabindex="0" id="lo_chat_end">×</div><div style="cursor: pointer; float:right; opacity:0.6; font-size:1empx; font-weight:bold;" id="lo_chat_min">–</div><div style="clear:both"></div></div><div id="lo_operator">undefined</div><div style="clear:both"></div><div style="height:0px; width:100%; border-top:1px solid #ffffff;border-bottom:1px solid #EAEAEA"></div></div><div id="lo_chat_log" style="height:225px; max-height: 30vh; font-size:13px; margin-top:10px; line-height: 120%; padding:10px; overflow-y:auto; margin-bottom:10px;font-family:inherit;font-size:inherit;"></div><form action="https://wh1.com/" onsubmit="LO.submit_chat(); return false;"><div id="lo_chat_input" style="position:relative; width: 100%; "><div class="lo-fx-hr" style="height:0px; margin-bottom:0px; margin-top:0px; width:100%; border-top:1px solid #ffffff;border-bottom:1px solid #EAEAEA"></div><div style="padding:10px;"><label for="lo_chat_textarea" style="display:none">Chat Input Box</label><textarea id="lo_chat_textarea" disabled="disabled" rows="2" style="color: black; background-color: rgb(255, 255, 255); border-radius: 5px; padding: 7px; height: auto; width: 100%; font-family: sans-serif; text-transform: none; resize: none;" dir="null" data-last-scroll-height="0"></textarea></div><div id="lo_chat_sound_holder" style="position:absolute; right:0px; top:-25px; width:100%;"><div style="cursor: pointer; float:right; opacity:0.6; padding-right:10px; height:16px;" id="lo_chat_sound"><img alt="Click to mute chat sounds" src="./index_files/sound-on.png"></div><div id="lo_chat_status" style="padding-left:10px; font-size:11px; color:#DADADA"></div><div style="clear:both;"></div></div></div></form><div id="lo_chat_submit_btn" style="display:none; padding:10px; padding-top:0px;"><button onclick="LO.submit_chat();" type="button" style="width:100%; box-sizing: border-box; font-size: 12px;  letter-spacing:initial; text-transform:none; line-height: 1.3333333;  color: #fff;  background-color: #FFFFFF;  display: inline-block;  padding: 6px 12px;   font-weight: bold;  line-height: 1.42857143;  text-align: center;  white-space: nowrap;  vertical-align: middle;  -ms-touch-action:manipulation;  touch-action: manipulation;  cursor: pointer; outline:none; -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none; user-select: none;  background-image: none;  background: #FFFFFF;  background-image: -webkit-linear-gradient(top, #FFFFFF, #AAAAAA);  background-image: -moz-linear-gradient(top, #FFFFFF, #AAAAAA);  background-image: -ms-linear-gradient(top, #FFFFFF, #AAAAAA);  background-image: -o-linear-gradient(top, #FFFFFF, #AAAAAA);  background-image: linear-gradient(to bottom, #FFFFFF, #AAAAAA); -webkit-border-radius: 5;  -moz-border-radius: 5;  border-color: #FFFFFF; border-radius: 5px;  font-family: Arial; text-shadow:0px 1px 1px #FFFFFF;  color: #000000; border-width:1px; font-weight:bold; ; padding: 10px 15px 10px 15px;  text-decoration: none; min-height: 40px;  text-align: center;">Chat</button></div><div id="lo_poweredBy" style="text-align:right; margin-bottom:10px;  font-size:10px; width:100%; line-height:16px; color: #CACACA;">Powered by <img src="./index_files/logo-dark.png" align="absmiddle" title="Lucky Orange Chat Logo" alt="Lucky Orange Chat Logo" onclick="LO.click_brand(event, &#39;chat&#39;);" style="cursor: pointer; height: 12px; width:auto; margin-right:10px; display: inline-block;" border="0"></div></div></body></html>
